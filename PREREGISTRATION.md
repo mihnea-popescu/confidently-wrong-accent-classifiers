@@ -14,10 +14,12 @@ in a "Deviations from Pre-Registration" section.
 
 ## 1. Research question
 
-Do off-the-shelf accent classifiers produce confidence scores that are
-equally well-calibrated across speakers from different first-language (L1)
-backgrounds? If not, can group-conditional temperature scaling close the
-calibration gap, and at what cost?
+When an off-the-shelf English accent classifier is deployed on conversational
+speech from speakers with diverse first-language (L1) backgrounds — the kind
+of input a real pronunciation-feedback product would encounter — does its
+top-1 confidence score mean the same thing across L1 groups? When the
+speaker's L1 is outside the model's training label space, does the model
+appropriately reduce its confidence, or does it remain confidently wrong?
 
 ---
 
