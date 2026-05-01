@@ -1,0 +1,89 @@
+{
+  "seed": 42,
+  "min_utterance_duration_sec": 1.0,
+  "min_speakers_per_group": 4,
+  "min_utterances_per_group": 100,
+  "n_total_rows_after_filter": 10653,
+  "n_cal": 5670,
+  "n_test": 4983,
+  "groups": {
+    "Bulgarian": {
+      "track": "B",
+      "n_speakers": 5,
+      "n_utterances": 285,
+      "total_seconds": 2716.0
+    },
+    "Catalan": {
+      "track": "B",
+      "n_speakers": 5,
+      "n_utterances": 561,
+      "total_seconds": 5769.6
+    },
+    "Italian": {
+      "track": "B",
+      "n_speakers": 5,
+      "n_utterances": 417,
+      "total_seconds": 5591.7
+    },
+    "Mandarin": {
+      "track": "B",
+      "n_speakers": 5,
+      "n_utterances": 475,
+      "total_seconds": 3401.8
+    },
+    "OOV-aggregate": {
+      "track": "B",
+      "n_speakers": 32,
+      "n_utterances": 3503,
+      "total_seconds": 29627.2
+    },
+    "Spanish": {
+      "track": "B",
+      "n_speakers": 8,
+      "n_utterances": 742,
+      "total_seconds": 6891.1
+    },
+    "Vietnamese": {
+      "track": "B",
+      "n_speakers": 10,
+      "n_utterances": 708,
+      "total_seconds": 7747.7
+    },
+    "african": {
+      "track": "A",
+      "n_speakers": 5,
+      "n_utterances": 928,
+      "total_seconds": 8843.6
+    },
+    "england": {
+      "track": "A",
+      "n_speakers": 9,
+      "n_utterances": 905,
+      "total_seconds": 7644.4
+    },
+    "indian": {
+      "track": "A",
+      "n_speakers": 4,
+      "n_utterances": 463,
+      "total_seconds": 3631.6
+    },
+    "ireland": {
+      "track": "A",
+      "n_speakers": 7,
+      "n_utterances": 879,
+      "total_seconds": 7286.0
+    },
+    "scotland": {
+      "track": "A",
+      "n_speakers": 4,
+      "n_utterances": 348,
+      "total_seconds": 3744.1
+    },
+    "us": {
+      "track": "A",
+      "n_speakers": 7,
+      "n_utterances": 439,
+      "total_seconds": 3267.1
+    }
+  }
+}

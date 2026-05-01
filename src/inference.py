@@ -51,7 +51,7 @@ def load_classifier(device: str | None = None):
     return classifier
 
 
-def extract_logits(
+def extract_scores(
     waveform_1d: torch.Tensor | np.ndarray,
     classifier=None,
 ) -> np.ndarray:
@@ -60,7 +60,7 @@ def extract_logits(
 
     Returns
     -------
-    np.ndarray of shape (K,) — log-probabilities (which work as logits for
+    np.ndarray of shape (K,) — scores, cosine similarities (which work as probabilities for
     softmax-with-temperature).
     """
     if classifier is None:

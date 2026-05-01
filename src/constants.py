@@ -30,23 +30,45 @@ MODEL_SAVEDIR = str(PRETRAINED_DIR / "accent-id-commonaccent_ecapa")
 # DO NOT edit by hand — verify against the downloaded file in 00_smoke_test.py.
 # The order here MUST match the model's logit ordering.
 CV_LABELS = [
-    "us",
-    "england",
-    "australia",
-    "indian",
-    "canada",
-    "bermuda",
-    "scotland",
-    "african",
-    "ireland",
-    "newzealand",
-    "wales",
-    "malaysia",
-    "philippines",
-    "singapore",
-    "hongkong",
-    "southatlandtic",  # NB: typo is in the model, do NOT correct
+    'england',
+    'us',
+    'canada',
+    'australia',
+    'indian',
+    'scotland',
+    'ireland',
+    'african',
+    'malaysia',
+    'newzealand',
+    'southatlandtic', # Not a typo
+    'bermuda',
+    'philippines',
+    'hongkong',
+    'wales',
+    'singapore'
 ]
+
+# ---- Cosine -> logit scale factor ----
+#
+# The CommonAccent ECAPA-TDNN model uses a cosine-similarity classifier
+# (L2-normalized embeddings · L2-normalized class prototypes). Inference
+# returns raw cosines in [-1, 1].
+#
+# At training time, the AAM-softmax loss applies a fixed scale factor S
+# before softmax so that the loss has useful gradients on a near-uniform
+# distribution of cosines. The SpeechBrain default for this recipe family
+# is S = 30. The model was trained to make `softmax(S * cos)` peaky on the
+# correct class.
+#
+# At inference, SpeechBrain returns raw cosines without applying S. So our
+# analysis must apply it before computing probabilities or fitting
+# temperature scaling. Without S, any softmax over cosines comes out
+# near-uniform and ECE is meaningless.
+#
+# If the actual training scale differed from 30, the fitted temperature
+# will absorb the discrepancy (T near 1.0 means our scale assumption is
+# correct; T far from 1.0 may indicate a mismatch — note for limitations).
+LOGIT_SCALE = 30.0
 
 # Dataset
 EDACC_HF_NAME = "edinburghcstr/edacc"
