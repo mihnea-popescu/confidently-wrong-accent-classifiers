@@ -1,0 +1,13 @@
+{
+  "global_T": 0.6759864687919617,
+  "per_group_T": {
+    "african": 53.645381927490234,
+    "england": 0.08883669972419739,
+    "indian": 0.266066312789917,
+    "ireland": 64.9869613647461,
+    "scotland": 0.6353577971458435,
+    "us": 0.06860769540071487
+  },
+  "n_calibration_track_a": 2456,
+  "min_examples_per_group_for_fit": 50
+}

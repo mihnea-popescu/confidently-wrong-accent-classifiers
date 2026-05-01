@@ -26,6 +26,19 @@ from src.constants import MODEL_SOURCE, MODEL_SAVEDIR
 _classifier_cache = None
 
 
+def select_device() -> str:
+    """
+    Return a SpeechBrain-safe device string.
+ 
+    We skip MPS deliberately: SpeechBrain's EncoderClassifier raises
+    AttributeError('device_type') on MPS in current versions. CPU works
+    correctly and is fast enough for the project's scale.
+    """
+    if torch.cuda.is_available():
+        return "cuda"
+    return "cpu"
+ 
+ 
 def load_classifier(device: str | None = None):
     """
     Load the SpeechBrain EncoderClassifier (cached for repeated calls).
@@ -33,15 +46,15 @@ def load_classifier(device: str | None = None):
     global _classifier_cache
     if _classifier_cache is not None:
         return _classifier_cache
-
+ 
     try:
         from speechbrain.inference.classifiers import EncoderClassifier
     except ImportError:
         from speechbrain.pretrained import EncoderClassifier
-
+ 
     if device is None:
-        device = "cuda" if torch.cuda.is_available() else "cpu"
-
+        device = select_device()
+ 
     classifier = EncoderClassifier.from_hparams(
         source=MODEL_SOURCE,
         savedir=MODEL_SAVEDIR,

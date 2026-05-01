@@ -1,0 +1,155 @@
+{
+  "track_a_per_group": {
+    "african": {
+      "n_speakers": 2,
+      "n_utterances": 136,
+      "top1_accuracy": 0.007352941176470588,
+      "ece": 0.07468394677647773,
+      "brier": 0.9473708285272601,
+      "selective_accuracy_80": 0.009174311926605505,
+      "mean_confidence": 0.08203689008951187,
+      "mean_entropy": 2.76347903795686
+    },
+    "england": {
+      "n_speakers": 4,
+      "n_utterances": 406,
+      "top1_accuracy": 0.645320197044335,
+      "ece": 0.5562486981083019,
+      "brier": 0.8954088117985122,
+      "selective_accuracy_80": 0.7138461538461538,
+      "mean_confidence": 0.08907149732112885,
+      "mean_entropy": 2.7616265789801804
+    },
+    "indian": {
+      "n_speakers": 2,
+      "n_utterances": 123,
+      "top1_accuracy": 0.5528455284552846,
+      "ece": 0.4656651465873408,
+      "brier": 0.9004657442143917,
+      "selective_accuracy_80": 0.6530612244897959,
+      "mean_confidence": 0.08718037605285645,
+      "mean_entropy": 2.7619002712332352
+    },
+    "ireland": {
+      "n_speakers": 3,
+      "n_utterances": 418,
+      "top1_accuracy": 0.023923444976076555,
+      "ece": 0.06284082875226103,
+      "brier": 0.9428194327413985,
+      "selective_accuracy_80": 0.020958083832335328,
+      "mean_confidence": 0.08676427602767944,
+      "mean_entropy": 2.7621507217681396
+    },
+    "scotland": {
+      "n_speakers": 2,
+      "n_utterances": 216,
+      "top1_accuracy": 0.4305555555555556,
+      "ece": 0.3429814907204774,
+      "brier": 0.9056026462539161,
+      "selective_accuracy_80": 0.43352601156069365,
+      "mean_confidence": 0.0875740647315979,
+      "mean_entropy": 2.7596508627841683
+    },
+    "us": {
+      "n_speakers": 3,
+      "n_utterances": 207,
+      "top1_accuracy": 0.7342995169082126,
+      "ece": 0.6470570937878845,
+      "brier": 0.89486315815779,
+      "selective_accuracy_80": 0.8132530120481928,
+      "mean_confidence": 0.08724242448806763,
+      "mean_entropy": 2.763652557249896
+    }
+  },
+  "track_b_per_group": {
+    "Bulgarian": {
+      "n_speakers": 2,
+      "n_utterances": 128,
+      "mean_confidence": 0.082699254155159,
+      "mean_entropy": 2.765153799050646,
+      "median_confidence": 0.08320413529872894,
+      "p25_confidence": 0.07744753733277321,
+      "p75_confidence": 0.08793892711400986
+    },
+    "Catalan": {
+      "n_speakers": 2,
+      "n_utterances": 230,
+      "mean_confidence": 0.08535189181566238,
+      "mean_entropy": 2.7631451171678445,
+      "median_confidence": 0.0856553465127945,
+      "p25_confidence": 0.08174105361104012,
+      "p75_confidence": 0.08888292871415615
+    },
+    "Italian": {
+      "n_speakers": 2,
+      "n_utterances": 126,
+      "mean_confidence": 0.08393019437789917,
+      "mean_entropy": 2.7638819114053086,
+      "median_confidence": 0.08279803395271301,
+      "p25_confidence": 0.07893817499279976,
+      "p75_confidence": 0.08877619728446007
+    },
+    "Mandarin": {
+      "n_speakers": 2,
+      "n_utterances": 298,
+      "mean_confidence": 0.0826132595539093,
+      "mean_entropy": 2.764675676192817,
+      "median_confidence": 0.08152203261852264,
+      "p25_confidence": 0.07823009043931961,
+      "p75_confidence": 0.08666929788887501
+    },
+    "OOV-aggregate": {
+      "n_speakers": 16,
+      "n_utterances": 1819,
+      "mean_confidence": 0.08501028269529343,
+      "mean_entropy": 2.763471396668281,
+      "median_confidence": 0.08451222628355026,
+      "p25_confidence": 0.08015447854995728,
+      "p75_confidence": 0.08953743800520897
+    },
+    "Spanish": {
+      "n_speakers": 4,
+      "n_utterances": 495,
+      "mean_confidence": 0.08587714284658432,
+      "mean_entropy": 2.7626509027759933,
+      "median_confidence": 0.08586175739765167,
+      "p25_confidence": 0.0816202349960804,
+      "p75_confidence": 0.08967071026563644
+    },
+    "Vietnamese": {
+      "n_speakers": 5,
+      "n_utterances": 381,
+      "mean_confidence": 0.08541899919509888,
+      "mean_entropy": 2.7633191759623363,
+      "median_confidence": 0.08519543707370758,
+      "p25_confidence": 0.08144450932741165,
+      "p75_confidence": 0.0894341766834259
+    }
+  },
+  "hard_cases": {
+    "HC1_in_vocab_ece_ratio": {
+      "best_group_ece": 0.06284082875226103,
+      "worst_group_ece": 0.6470570937878845,
+      "ratio": 10.296762576744394,
+      "predicted": ">= 2.0",
+      "held": true
+    },
+    "HC2_oov_overconfidence": {
+      "in_vocab_mean_confidence": 0.08664492145180702,
+      "oov_named_mean_confidence": 0.08431512365738551,
+      "oov_all_mean_confidence": 0.08441443209137235,
+      "gap": 0.0023297977944215092,
+      "predicted": "< 0.10 (model fails to lower confidence on OOV)",
+      "held": true
+    },
+    "HC3_utterance_length": {
+      "short_ece (<3s)": 0.22854874034722644,
+      "long_ece (>5s)": 0.3339670914269629,
+      "n_short": 462,
+      "n_long": 798,
+      "ratio_short_to_long": 0.6843450933165043,
+      "predicted": ">= 1.30 (short utterances more miscalibrated)",
+      "held": false
+    }
+  }
+}
