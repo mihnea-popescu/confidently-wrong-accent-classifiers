@@ -1,0 +1,207 @@
+{
+  "Vietnamese": {
+    "n_speakers": 10,
+    "n_utterances": 1046,
+    "total_seconds": 7900.7
+  },
+  "Southern British English": {
+    "n_speakers": 9,
+    "n_utterances": 1243,
+    "total_seconds": 7801.0
+  },
+  "Spanish": {
+    "n_speakers": 8,
+    "n_utterances": 1091,
+    "total_seconds": 7061.7
+  },
+  "Mainstream US English": {
+    "n_speakers": 7,
+    "n_utterances": 752,
+    "total_seconds": 3377.6
+  },
+  "Irish English": {
+    "n_speakers": 7,
+    "n_utterances": 1317,
+    "total_seconds": 7456.2
+  },
+  "Jamaican English": {
+    "n_speakers": 6,
+    "n_utterances": 753,
+    "total_seconds": 4358.7
+  },
+  "Italian": {
+    "n_speakers": 5,
+    "n_utterances": 733,
+    "total_seconds": 5726.6
+  },
+  "Mandarin": {
+    "n_speakers": 5,
+    "n_utterances": 663,
+    "total_seconds": 3491.1
+  },
+  "Bulgarian": {
+    "n_speakers": 5,
+    "n_utterances": 526,
+    "total_seconds": 2810.3
+  },
+  "Catalan": {
+    "n_speakers": 5,
+    "n_utterances": 855,
+    "total_seconds": 5889.8
+  },
+  "Nigerian English": {
+    "n_speakers": 5,
+    "n_utterances": 1356,
+    "total_seconds": 9010.0
+  },
+  "Indian English": {
+    "n_speakers": 4,
+    "n_utterances": 654,
+    "total_seconds": 3712.9
+  },
+  "Scottish English": {
+    "n_speakers": 4,
+    "n_utterances": 448,
+    "total_seconds": 3794.7
+  },
+  "Polish": {
+    "n_speakers": 3,
+    "n_utterances": 528,
+    "total_seconds": 2253.1
+  },
+  "French": {
+    "n_speakers": 3,
+    "n_utterances": 132,
+    "total_seconds": 1320.9
+  },
+  "Romanian": {
+    "n_speakers": 3,
+    "n_utterances": 1134,
+    "total_seconds": 4350.2
+  },
+  "Lithuanian": {
+    "n_speakers": 3,
+    "n_utterances": 653,
+    "total_seconds": 3835.9
+  },
+  "Arabic": {
+    "n_speakers": 2,
+    "n_utterances": 469,
+    "total_seconds": 4005.5
+  },
+  "South African English": {
+    "n_speakers": 2,
+    "n_utterances": 246,
+    "total_seconds": 2107.7
+  },
+  "Macedonian": {
+    "n_speakers": 2,
+    "n_utterances": 87,
+    "total_seconds": 2008.0
+  },
+  "Sinhalese": {
+    "n_speakers": 2,
+    "n_utterances": 95,
+    "total_seconds": 712.2
+  },
+  "Urdu": {
+    "n_speakers": 2,
+    "n_utterances": 274,
+    "total_seconds": 3106.3
+  },
+  "Kenyan English": {
+    "n_speakers": 2,
+    "n_utterances": 1157,
+    "total_seconds": 5667.3
+  },
+  "Maltese": {
+    "n_speakers": 1,
+    "n_utterances": 101,
+    "total_seconds": 658.1
+  },
+  "German": {
+    "n_speakers": 1,
+    "n_utterances": 73,
+    "total_seconds": 585.7
+  },
+  "Dutch": {
+    "n_speakers": 1,
+    "n_utterances": 98,
+    "total_seconds": 456.3
+  },
+  "Japanese": {
+    "n_speakers": 1,
+    "n_utterances": 137,
+    "total_seconds": 669.6
+  },
+  "Icelandic": {
+    "n_speakers": 1,
+    "n_utterances": 102,
+    "total_seconds": 828.0
+  },
+  "Russian": {
+    "n_speakers": 1,
+    "n_utterances": 287,
+    "total_seconds": 1154.4
+  },
+  "Korean": {
+    "n_speakers": 1,
+    "n_utterances": 56,
+    "total_seconds": 412.1
+  },
+  "Montenegrin": {
+    "n_speakers": 1,
+    "n_utterances": 252,
+    "total_seconds": 831.8
+  },
+  "English": {
+    "n_speakers": 1,
+    "n_utterances": 161,
+    "total_seconds": 1284.8
+  },
+  "Bahasa": {
+    "n_speakers": 1,
+    "n_utterances": 163,
+    "total_seconds": 547.4
+  },
+  "Portoguese": {
+    "n_speakers": 1,
+    "n_utterances": 96,
+    "total_seconds": 841.2
+  },
+  "Spanish (Mexican)": {
+    "n_speakers": 1,
+    "n_utterances": 78,
+    "total_seconds": 499.3
+  },
+  "Ghanain English": {
+    "n_speakers": 1,
+    "n_utterances": 357,
+    "total_seconds": 1867.3
+  },
+  "Hindi": {
+    "n_speakers": 1,
+    "n_utterances": 350,
+    "total_seconds": 1703.3
+  },
+  "Filipino": {
+    "n_speakers": 1,
+    "n_utterances": 67,
+    "total_seconds": 552.2
+  },
+  "Tagalog": {
+    "n_speakers": 1,
+    "n_utterances": 65,
+    "total_seconds": 446.5
+  },
+  "Hebrew": {
+    "n_speakers": 1,
+    "n_utterances": 267,
+    "total_seconds": 1847.5
+  },
+  "Indonesian": {
+    "n_speakers": 1,
+    "n_utterances": 215,
+    "total_seconds": 937.3
+  }
+}
