@@ -1,0 +1,11 @@
+utterance_id,ds_split,ds_index,speaker,group,track,target_label,target_idx,duration_sec,predicted_label,predicted_confidence,correct,selection_reason,listen_path,listening_note
+18963,test,9115,EDACC-C64-A,us,A,us,1,6.49,us,0.9914911389350891,True,us: correctly classified — best in-vocab case,qualitative_audio/18963__us__pred-us__OK.wav,
+19017,test,9169,EDACC-C64-A,us,A,us,1,1.66,african,0.8210632801055908,False,us: misclassified — what does the model fall back to,qualitative_audio/19017__us__pred-african__X.wav,
+5313,validation,5313,EDACC-C32-A,england,A,england,0,1.9,england,0.9822010397911072,True,england: correctly classified,qualitative_audio/05313__england__pred-england__OK.wav,
+491,validation,491,EDACC-C09-A,indian,A,indian,4,2.23,indian,0.9987109899520874,True,indian: correctly classified — partial-improvement case,qualitative_audio/00491__indian__pred-indian__OK.wav,
+7223,validation,7223,EDACC-C46-A,scotland,A,scotland,5,2.11,england,0.9994297623634338,False,scotland: any — noisy small-group case,qualitative_audio/07223__scotland__pred-england__X.wav,
+16219,test,6371,EDACC-C41-A,african,A,african,7,2.74,england,0.5484941601753235,False,african: where does the model send Nigerian English,qualitative_audio/16219__african__pred-england__X.wav,
+7821,validation,7821,EDACC-C50-B,ireland,A,ireland,6,23.59,us,0.9938793182373047,False,ireland: where does the model send Irish English,qualitative_audio/07821__ireland__pred-us__X.wav,
+9054,validation,9054,EDACC-C58-A,Vietnamese,B,,-1,2.89,indian,0.8136194944381714,False,Vietnamese OOV: where does the model fall back,qualitative_audio/09054__Vietnamese__pred-indian__X.wav,
+9062,validation,9062,EDACC-C58-A,Vietnamese,B,,-1,10.54,us,0.9911603331565857,False,Vietnamese OOV: where does the model fall back,qualitative_audio/09062__Vietnamese__pred-us__X.wav,
+8041,validation,8041,EDACC-C50-B,ireland,A,ireland,6,1.81,australia,0.9062430262565613,False,"short utterance (<2s, Track A): HC3 investigation",qualitative_audio/08041__ireland__pred-australia__X.wav,
