@@ -1,13 +1,23 @@
 {
-  "global_T": 0.6759864687919617,
+  "global_T": 7.478092193603516,
   "per_group_T": {
-    "african": 53.645381927490234,
-    "england": 0.08883669972419739,
-    "indian": 0.266066312789917,
-    "ireland": 64.9869613647461,
-    "scotland": 0.6353577971458435,
-    "us": 0.06860769540071487
+    "african": 100.0,
+    "england": 2.999563455581665,
+    "indian": 4.112420558929443,
+    "ireland": 100.0,
+    "scotland": 7.259132385253906,
+    "us": 3.182781457901001
   },
   "n_calibration_track_a": 2456,
-  "min_examples_per_group_for_fit": 50
+  "min_examples_per_group_for_fit": 50,
+  "logit_scale": 30.0,
+  "t_bounds": [
+    0.05,
+    100.0
+  ],
+  "degenerate_groups": [
+    "african",
+    "ireland"
+  ],
+  "degenerate_groups_note": "T at a bound means the NLL has no finite minimum and the likelihood-optimal recalibration is the uniform distribution (abstention). Any ECE reduction for these groups reflects the model being discarded, not calibrated."
 }

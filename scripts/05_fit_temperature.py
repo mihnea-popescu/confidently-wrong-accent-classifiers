@@ -24,7 +24,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 import numpy as np
 import pandas as pd
 
-from src.constants import RESULTS_DIR, SPLITS_DIR
+from src.constants import LOGIT_SCALE, RESULTS_DIR, SPLITS_DIR, T_MAX, T_MIN
 from src.temperature import (
     fit_group_conditional_temperatures,
     fit_single_temperature,
@@ -42,7 +42,9 @@ def main():
     cal_df = cal_df.merge(inf_df, on="utterance_id", how="inner")
     id_to_idx = {int(uid): i for i, uid in enumerate(cal_npz["utterance_ids"])}
     perm = np.array([id_to_idx[int(u)] for u in cal_df["utterance_id"]], dtype=int)
-    cal_scores = cal_npz["scores"][perm]
+    # Cosines -> logits. T is fit on logits, so the fitted value is relative
+    # to LOGIT_SCALE (see src/constants.py).
+    cal_scores = cal_npz["scores"][perm] * LOGIT_SCALE
 
     # Track A only — those have target labels
     track_a_mask = cal_df["track"] == "A"
@@ -55,23 +57,54 @@ def main():
 
     # ---- Single global temperature ----
     print("\nFitting single global T ...")
-    global_t = fit_single_temperature(a_scores, a_targets)
+    global_t = fit_single_temperature(
+        a_scores, a_targets, t_min=T_MIN, t_max=T_MAX,
+    )
     print(f"  Global T = {global_t:.4f}")
 
     # ---- Group-conditional temperatures ----
     print("\nFitting group-conditional T ...")
     per_group_t = fit_group_conditional_temperatures(
         a_scores, a_targets, a_groups, min_examples_per_group=50,
+        t_min=T_MIN, t_max=T_MAX,
     )
+
+    # A group that lands on a bound has no finite NLL minimum: the
+    # likelihood-optimal recalibration is the uniform distribution, i.e. throw
+    # the prediction away. That is a degenerate result, not a calibration, and
+    # the ECE improvement it produces must NOT be read as the intervention
+    # working. Flag it here so downstream reporting cannot miss it.
+    degenerate = []
     for g, T in sorted(per_group_t.items()):
         n = int((a_groups == g).sum())
-        print(f"  T[{g}] = {T:.4f}  (fit on {n} examples)")
+        at_bound = (not np.isnan(T)) and (T >= T_MAX or T <= T_MIN)
+        flag = "  <-- DEGENERATE (at bound)" if at_bound else ""
+        if at_bound:
+            degenerate.append(str(g))
+        print(f"  T[{g}] = {T:.4f}  (fit on {n} examples){flag}")
+
+    if degenerate:
+        print(
+            f"\n  [!] {len(degenerate)} group(s) hit a temperature bound: "
+            f"{', '.join(degenerate)}"
+        )
+        print("      For these the model carries no usable signal; the NLL-optimal")
+        print("      answer is the uniform distribution. Report as degeneracy.")
 
     out = {
         "global_T": float(global_t),
         "per_group_T": {str(g): float(T) for g, T in per_group_t.items()},
         "n_calibration_track_a": int(track_a_mask.sum()),
         "min_examples_per_group_for_fit": 50,
+        "logit_scale": float(LOGIT_SCALE),
+        "t_bounds": [float(T_MIN), float(T_MAX)],
+        "degenerate_groups": degenerate,
+        "degenerate_groups_note": (
+            "T at a bound means the NLL has no finite minimum and the "
+            "likelihood-optimal recalibration is the uniform distribution "
+            "(abstention). Any ECE reduction for these groups reflects the "
+            "model being discarded, not calibrated."
+        ),
     }
     out_path = RESULTS_DIR / "temperatures.json"
     out_path.write_text(json.dumps(out, indent=2))

@@ -34,6 +34,7 @@ from src.constants import (
     BEST_GROUP_ECE_RELATIVE_INCREASE_LIMIT,
     ECE_BINS,
     FIGURES_DIR,
+    LOGIT_SCALE,
     RESULTS_DIR,
     SPLITS_DIR,
     WORST_GROUP_ECE_RELATIVE_REDUCTION_TARGET,
@@ -53,7 +54,8 @@ def load_test():
     df = df.merge(inf_df, on="utterance_id", how="inner")
     id_to_idx = {int(uid): i for i, uid in enumerate(npz["utterance_ids"])}
     perm = np.array([id_to_idx[int(u)] for u in df["utterance_id"]], dtype=int)
-    scores = npz["scores"][perm]
+    # Cosines -> logits, matching the units T was fit in (see 05).
+    scores = npz["scores"][perm] * LOGIT_SCALE
     return df, scores
 
 

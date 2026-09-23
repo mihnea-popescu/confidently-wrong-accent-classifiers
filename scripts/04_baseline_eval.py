@@ -27,6 +27,7 @@ import matplotlib.pyplot as plt
 from src.constants import (
     ECE_BINS,
     FIGURES_DIR,
+    LOGIT_SCALE,
     RESULTS_DIR,
     SELECTIVE_ACCURACY_COVERAGE,
     SPLITS_DIR,
@@ -58,9 +59,11 @@ def load_inference(split_name: str) -> tuple[pd.DataFrame, np.ndarray]:
     perm = np.array([id_to_idx[int(u)] for u in df["utterance_id"]], dtype=int)
     scores = npz["scores"][perm]
 
-    # Model returns log-probabilities; convert to probabilities for metrics.
-    # softmax is invariant to additive shifts, so log_softmax -> exp gives probs.
-    probs = np.exp(scores - scores.max(axis=1, keepdims=True))
+    # The model returns raw cosine similarities, NOT log-probabilities.
+    # Multiply by the training-time AAM-softmax scale to recover logits before
+    # taking the softmax. See LOGIT_SCALE in src/constants.py.
+    logits = scores * LOGIT_SCALE
+    probs = np.exp(logits - logits.max(axis=1, keepdims=True))
     probs = probs / probs.sum(axis=1, keepdims=True)
     return df, probs
 

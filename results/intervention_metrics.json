@@ -2,115 +2,115 @@
   "track_a": {
     "baseline": {
       "african": {
-        "ece": 0.07468394649483145,
+        "ece": 0.7775329040520214,
         "top1_accuracy": 0.007352941176470588,
-        "mean_confidence": 0.08203688767130204,
+        "mean_confidence": 0.784885845228492,
         "n_utterances": 136
       },
       "england": {
-        "ece": 0.5562486981924388,
+        "ece": 0.2612188315365144,
         "top1_accuracy": 0.645320197044335,
-        "mean_confidence": 0.08907149885189608,
+        "mean_confidence": 0.9065390285808492,
         "n_utterances": 406
       },
       "indian": {
-        "ece": 0.4656651468621914,
+        "ece": 0.30333803546698973,
         "top1_accuracy": 0.5528455284552846,
-        "mean_confidence": 0.08718038159309317,
+        "mean_confidence": 0.8561835639222743,
         "n_utterances": 123
       },
       "ireland": {
-        "ece": 0.06284082875491241,
+        "ece": 0.8436177625041177,
         "top1_accuracy": 0.023923444976076555,
-        "mean_confidence": 0.08676427373098897,
+        "mean_confidence": 0.8642237998028202,
         "n_utterances": 418
       },
       "scotland": {
-        "ece": 0.3429814901953294,
+        "ece": 0.4319421370964604,
         "top1_accuracy": 0.4305555555555556,
-        "mean_confidence": 0.08757406536022617,
+        "mean_confidence": 0.8546981756020637,
         "n_utterances": 216
       },
       "us": {
-        "ece": 0.6470570938919232,
+        "ece": 0.16679743475653763,
         "top1_accuracy": 0.7342995169082126,
-        "mean_confidence": 0.08724242301628937,
+        "mean_confidence": 0.9010969516647501,
         "n_utterances": 207
       }
     },
     "global_T": {
       "african": {
-        "ece": 0.0856468969041335,
+        "ece": 0.1623413421242341,
         "top1_accuracy": 0.007352941176470588,
-        "mean_confidence": 0.0929998380806041,
+        "mean_confidence": 0.16969428330070468,
         "n_utterances": 136
       },
       "england": {
-        "ece": 0.5403395266626081,
+        "ece": 0.4164828538801565,
         "top1_accuracy": 0.645320197044335,
-        "mean_confidence": 0.10498067038172698,
+        "mean_confidence": 0.22883734316417853,
         "n_utterances": 406
       },
       "indian": {
-        "ece": 0.45102453799080916,
+        "ece": 0.3392021318243694,
         "top1_accuracy": 0.5528455284552846,
-        "mean_confidence": 0.1018209904644754,
+        "mean_confidence": 0.2136433966309151,
         "n_utterances": 123
       },
       "ireland": {
-        "ece": 0.07701523872417311,
+        "ece": 0.1826679320392534,
         "top1_accuracy": 0.023923444976076555,
-        "mean_confidence": 0.10093868370024967,
+        "mean_confidence": 0.20659137701532992,
         "n_utterances": 418
       },
       "scotland": {
-        "ece": 0.32841201930936326,
+        "ece": 0.22978927939534163,
         "top1_accuracy": 0.4305555555555556,
-        "mean_confidence": 0.10214353624619232,
+        "mean_confidence": 0.20851580059378869,
         "n_utterances": 216
       },
       "us": {
-        "ece": 0.6323404421066219,
+        "ece": 0.5180557911005761,
         "top1_accuracy": 0.7342995169082126,
-        "mean_confidence": 0.10195907480159071,
+        "mean_confidence": 0.21624372580763637,
         "n_utterances": 207
       }
     },
     "group_conditional_T": {
       "african": {
-        "ece": 0.05547247117543004,
+        "ece": 0.06055721160814639,
         "top1_accuracy": 0.007352941176470588,
-        "mean_confidence": 0.06282541235190063,
+        "mean_confidence": 0.06791015278461698,
         "n_utterances": 136
       },
       "england": {
-        "ece": 0.04733258267179927,
+        "ece": 0.06121106044379262,
         "top1_accuracy": 0.645320197044335,
-        "mean_confidence": 0.6648503282245117,
+        "mean_confidence": 0.6099020269200667,
         "n_utterances": 406
       },
       "indian": {
-        "ece": 0.35288084872370673,
+        "ece": 0.1874026079474923,
         "top1_accuracy": 0.5528455284552846,
-        "mean_confidence": 0.1999646797315779,
+        "mean_confidence": 0.4090526221999721,
         "n_utterances": 123
       },
       "ireland": {
-        "ece": 0.03889999131058795,
+        "ece": 0.045151137137044044,
         "top1_accuracy": 0.023923444976076555,
-        "mean_confidence": 0.06282343628666451,
+        "mean_confidence": 0.0690745821131206,
         "n_utterances": 418
       },
       "scotland": {
-        "ece": 0.3253293749998001,
+        "ece": 0.23308906472820218,
         "top1_accuracy": 0.4305555555555556,
-        "mean_confidence": 0.10522618055575551,
+        "mean_confidence": 0.21474108581559434,
         "n_utterances": 216
       },
       "us": {
-        "ece": 0.07336150833628528,
+        "ece": 0.17587902384920717,
         "top1_accuracy": 0.7342995169082126,
-        "mean_confidence": 0.7496009175517444,
+        "mean_confidence": 0.5584204930590054,
         "n_utterances": 207
       }
     }
@@ -118,142 +118,142 @@
   "track_b": {
     "baseline": {
       "Bulgarian": {
-        "mean_confidence": 0.08269925623917963,
-        "mean_entropy": 2.7651538080338476,
+        "mean_confidence": 0.8263122234649968,
+        "mean_entropy": 0.47795576583204413,
         "n_utterances": 128
       },
       "Catalan": {
-        "mean_confidence": 0.08535189229809195,
-        "mean_entropy": 2.763145117533509,
+        "mean_confidence": 0.8817774367254855,
+        "mean_entropy": 0.32743745014128955,
         "n_utterances": 230
       },
       "Italian": {
-        "mean_confidence": 0.08393020319242003,
-        "mean_entropy": 2.7638819139860145,
+        "mean_confidence": 0.8573814036148731,
+        "mean_entropy": 0.4056710386884769,
         "n_utterances": 126
       },
       "Mandarin": {
-        "mean_confidence": 0.0826132605729854,
-        "mean_entropy": 2.764675679721534,
+        "mean_confidence": 0.8382086643905097,
+        "mean_entropy": 0.45606913640434454,
         "n_utterances": 298
       },
       "OOV-aggregate": {
-        "mean_confidence": 0.08501028155518554,
-        "mean_entropy": 2.7634713966041615,
+        "mean_confidence": 0.8679432398766793,
+        "mean_entropy": 0.36799208976397396,
         "n_utterances": 1819
       },
       "Spanish": {
-        "mean_confidence": 0.08587714107610345,
-        "mean_entropy": 2.762650896830115,
+        "mean_confidence": 0.8516692540331802,
+        "mean_entropy": 0.38998153582867195,
         "n_utterances": 495
       },
       "Vietnamese": {
-        "mean_confidence": 0.08541899656346824,
-        "mean_entropy": 2.7633191814051945,
+        "mean_confidence": 0.8801973579930898,
+        "mean_entropy": 0.3398552050710414,
         "n_utterances": 381
       }
     },
     "global_T": {
       "Bulgarian": {
-        "mean_confidence": 0.09427008029859604,
-        "mean_entropy": 2.7557737947436953,
+        "mean_confidence": 0.17902127105892013,
+        "mean_entropy": 2.626636454652033,
         "n_utterances": 128
       },
       "Catalan": {
-        "mean_confidence": 0.09855696401907435,
-        "mean_entropy": 2.751237383107471,
+        "mean_confidence": 0.19566248726854316,
+        "mean_entropy": 2.589621561393665,
         "n_utterances": 230
       },
       "Italian": {
-        "mean_confidence": 0.09623195291597263,
-        "mean_entropy": 2.7529895491612892,
+        "mean_confidence": 0.18626722606396034,
+        "mean_entropy": 2.607003996909196,
         "n_utterances": 126
       },
       "Mandarin": {
-        "mean_confidence": 0.09406058380284901,
-        "mean_entropy": 2.754819422285386,
+        "mean_confidence": 0.1767649641794539,
+        "mean_entropy": 2.6237418168681703,
         "n_utterances": 298
       },
       "OOV-aggregate": {
-        "mean_confidence": 0.09806118076675963,
-        "mean_entropy": 2.751981121792281,
+        "mean_confidence": 0.19510056986446533,
+        "mean_entropy": 2.594545041427616,
         "n_utterances": 1819
       },
       "Spanish": {
-        "mean_confidence": 0.09944551317966838,
-        "mean_entropy": 2.749997196043196,
+        "mean_confidence": 0.19960118444553732,
+        "mean_entropy": 2.575586894405285,
         "n_utterances": 495
       },
       "Vietnamese": {
-        "mean_confidence": 0.09870878798939405,
-        "mean_entropy": 2.7515747330332125,
+        "mean_confidence": 0.19722890176753355,
+        "mean_entropy": 2.589948932679685,
         "n_utterances": 381
       }
     },
     "group_conditional_T": {
       "Bulgarian": {
-        "mean_confidence": 0.09427008029859604,
-        "mean_entropy": 2.7557737947436953,
+        "mean_confidence": 0.17902127105892013,
+        "mean_entropy": 2.626636454652033,
         "n_utterances": 128
       },
       "Catalan": {
-        "mean_confidence": 0.09855696401907435,
-        "mean_entropy": 2.751237383107471,
+        "mean_confidence": 0.19566248726854316,
+        "mean_entropy": 2.589621561393665,
         "n_utterances": 230
       },
       "Italian": {
-        "mean_confidence": 0.09623195291597263,
-        "mean_entropy": 2.7529895491612892,
+        "mean_confidence": 0.18626722606396034,
+        "mean_entropy": 2.607003996909196,
         "n_utterances": 126
       },
       "Mandarin": {
-        "mean_confidence": 0.09406058380284901,
-        "mean_entropy": 2.754819422285386,
+        "mean_confidence": 0.1767649641794539,
+        "mean_entropy": 2.6237418168681703,
         "n_utterances": 298
       },
       "OOV-aggregate": {
-        "mean_confidence": 0.09806118076675963,
-        "mean_entropy": 2.751981121792281,
+        "mean_confidence": 0.19510056986446533,
+        "mean_entropy": 2.594545041427616,
         "n_utterances": 1819
       },
       "Spanish": {
-        "mean_confidence": 0.09944551317966838,
-        "mean_entropy": 2.749997196043196,
+        "mean_confidence": 0.19960118444553732,
+        "mean_entropy": 2.575586894405285,
         "n_utterances": 495
       },
       "Vietnamese": {
-        "mean_confidence": 0.09870878798939405,
-        "mean_entropy": 2.7515747330332125,
+        "mean_confidence": 0.19722890176753355,
+        "mean_entropy": 2.589948932679685,
         "n_utterances": 381
       }
     }
   },
   "decision_rule": {
     "group_conditional_vs_baseline": {
-      "baseline_worst_group": "us",
-      "baseline_worst_ece": 0.6470570938919232,
-      "intervention_ece_for_baseline_worst_group": 0.07336150833628528,
-      "worst_group_relative_reduction": 0.8866228204144552,
+      "baseline_worst_group": "ireland",
+      "baseline_worst_ece": 0.8436177625041177,
+      "intervention_ece_for_baseline_worst_group": 0.045151137137044044,
+      "worst_group_relative_reduction": 0.9464791530668801,
       "criterion_1_met (>=30% reduction)": true,
-      "baseline_best_group": "ireland",
-      "baseline_best_ece": 0.06284082875491241,
-      "intervention_ece_for_baseline_best_group": 0.03889999131058795,
-      "best_group_relative_increase": -0.38097583877667984,
+      "baseline_best_group": "us",
+      "baseline_best_ece": 0.16679743475653763,
+      "intervention_ece_for_baseline_best_group": 0.17587902384920717,
+      "best_group_relative_increase": 0.054446815119940484,
       "criterion_2_met (<=20% increase)": true,
       "verdict": "successful"
     },
     "global_vs_baseline": {
-      "baseline_worst_group": "us",
-      "baseline_worst_ece": 0.6470570938919232,
-      "intervention_ece_for_baseline_worst_group": 0.6323404421066219,
-      "worst_group_relative_reduction": 0.022743977191847994,
-      "criterion_1_met (>=30% reduction)": false,
-      "baseline_best_group": "ireland",
-      "baseline_best_ece": 0.06284082875491241,
-      "intervention_ece_for_baseline_best_group": 0.07701523872417311,
-      "best_group_relative_increase": 0.22556051933278573,
+      "baseline_worst_group": "ireland",
+      "baseline_worst_ece": 0.8436177625041177,
+      "intervention_ece_for_baseline_worst_group": 0.1826679320392534,
+      "worst_group_relative_reduction": 0.7834707373905467,
+      "criterion_1_met (>=30% reduction)": true,
+      "baseline_best_group": "us",
+      "baseline_best_ece": 0.16679743475653763,
+      "intervention_ece_for_baseline_best_group": 0.5180557911005761,
+      "best_group_relative_increase": 2.1058978326420026,
       "criterion_2_met (<=20% increase)": false,
-      "verdict": "failed"
+      "verdict": "partial"
     }
   }
 }

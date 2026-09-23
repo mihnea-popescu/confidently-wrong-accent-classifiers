@@ -25,6 +25,8 @@ def fit_single_temperature(
     labels: np.ndarray,
     max_iter: int = 50,
     init_t: float = 1.0,
+    t_min: float = 0.05,
+    t_max: float = 100.0,
 ) -> float:
     """
     Fit a single temperature scalar T by minimizing NLL via LBFGS.
@@ -35,10 +37,15 @@ def fit_single_temperature(
     labels : (N,) int array — true class indices in [0, K)
     max_iter : LBFGS iterations
     init_t : initial value for T
+    t_min, t_max : float — the fitted T is clamped to [t_min, t_max]
 
     Returns
     -------
-    T : float — fitted temperature, > 0
+    T : float — fitted temperature, in [t_min, t_max]
+
+    A returned T equal to t_max means the NLL had no finite minimum: the
+    likelihood-optimal recalibration for this data is the uniform
+    distribution. Callers must treat that as degeneracy, not as a fit.
     """
     logits = np.asarray(logits, dtype=np.float32)
     labels = np.asarray(labels, dtype=np.int64)
@@ -48,9 +55,23 @@ def fit_single_temperature(
     logits_t = torch.from_numpy(logits)
     labels_t = torch.from_numpy(labels)
 
-    # Optimize log(T) so T stays positive without constraints
+    # Optimize log(T) so T stays positive without constraints.
+    #
+    # The line search is load-bearing, not a tuning detail. Without it LBFGS
+    # takes fixed steps of size `lr` and silently stops far short of the
+    # optimum, and how far short depends on the scale of the logits — so the
+    # fitted T stops being a function of the data alone. The identity
+    # T*(S * logits) == S * T*(logits), which must hold exactly, is the test;
+    # it fails without a line search and holds to 4 decimals with one.
     log_t = torch.tensor([float(np.log(init_t))], requires_grad=True)
-    optimizer = torch.optim.LBFGS([log_t], lr=0.1, max_iter=max_iter)
+    optimizer = torch.optim.LBFGS(
+        [log_t],
+        lr=1.0,
+        max_iter=max_iter,
+        line_search_fn="strong_wolfe",
+        tolerance_grad=1e-9,
+        tolerance_change=1e-12,
+    )
 
     def closure():
         optimizer.zero_grad()
@@ -60,7 +81,11 @@ def fit_single_temperature(
         return loss
 
     optimizer.step(closure)
-    return float(torch.exp(log_t).detach().item())
+    t = float(torch.exp(log_t).detach().item())
+
+    # NLL is unimodal in log T, so clamping the unconstrained minimizer to the
+    # box gives the constrained minimizer exactly — no need to refit.
+    return float(min(max(t, t_min), t_max))
 
 
 def fit_group_conditional_temperatures(
@@ -70,6 +95,8 @@ def fit_group_conditional_temperatures(
     max_iter: int = 50,
     init_t: float = 1.0,
     min_examples_per_group: int = 50,
+    t_min: float = 0.05,
+    t_max: float = 100.0,
 ) -> dict:
     """
     Fit one temperature per group.
@@ -102,7 +129,8 @@ def fit_group_conditional_temperatures(
             out[g] = float("nan")
             continue
         out[g] = fit_single_temperature(
-            logits[mask], labels[mask], max_iter=max_iter, init_t=init_t
+            logits[mask], labels[mask], max_iter=max_iter, init_t=init_t,
+            t_min=t_min, t_max=t_max,
         )
     return out
 
