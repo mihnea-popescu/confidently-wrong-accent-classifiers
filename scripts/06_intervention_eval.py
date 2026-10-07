@@ -31,19 +31,23 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 from src.constants import (
+    BOOTSTRAP_CI,
+    BOOTSTRAP_N,
     BEST_GROUP_ECE_RELATIVE_INCREASE_LIMIT,
     ECE_BINS,
     FIGURES_DIR,
     LOGIT_SCALE,
     RESULTS_DIR,
+    SEED,
     SPLITS_DIR,
     WORST_GROUP_ECE_RELATIVE_REDUCTION_TARGET,
 )
 from src.metrics import (
     expected_calibration_error,
     predictive_entropy,
-    top1_accuracy,
+    speaker_bootstrap_ci,
 )
+from src.plots import ci_yerr
 from src.temperature import apply_temperature, apply_group_conditional_temperature
 
 
@@ -64,7 +68,13 @@ def per_group_eces(
     probs: np.ndarray,
     track: str = "A",
 ) -> dict:
-    """Per-group ECE and confidence for groups in `track`."""
+    """
+    Per-group ECE and confidence for groups in `track`, each with a 95%
+    speaker-level bootstrap CI under the `<metric>_ci` key. The bootstrap
+    seed is fixed, so every condition sees the same speaker resamples.
+    Temperatures are held fixed: the CIs do not include uncertainty from
+    fitting T on the calibration split.
+    """
     out = {}
     for grp, sub_idx in df.groupby("group").groups.items():
         sub = df.loc[sub_idx]
@@ -72,22 +82,33 @@ def per_group_eces(
             continue
         sub_probs = probs[df.index.get_indexer(sub_idx)]
         confs = sub_probs.max(axis=1)
+        speakers = sub["speaker"].to_numpy()
         if track == "A":
             targets = sub["target_idx"].to_numpy(dtype=int)
             correct = (sub_probs.argmax(axis=1) == targets).astype(int)
-            out[grp] = {
-                "ece": expected_calibration_error(confs, correct, n_bins=ECE_BINS),
-                "top1_accuracy": top1_accuracy(sub_probs, targets),
-                "mean_confidence": float(confs.mean()),
-                "n_utterances": int(len(sub)),
-            }
+            keys = ["ece", "top1_accuracy", "mean_confidence"]
+
+            def stats(idx):
+                return [
+                    expected_calibration_error(confs[idx], correct[idx], n_bins=ECE_BINS),
+                    correct[idx].mean(),
+                    confs[idx].mean(),
+                ]
         else:  # Track B
             ents = predictive_entropy(sub_probs)
-            out[grp] = {
-                "mean_confidence": float(confs.mean()),
-                "mean_entropy": float(ents.mean()),
-                "n_utterances": int(len(sub)),
-            }
+            keys = ["mean_confidence", "mean_entropy"]
+
+            def stats(idx):
+                return [confs[idx].mean(), ents[idx].mean()]
+
+        point = stats(np.arange(len(sub)))
+        cis = speaker_bootstrap_ci(stats, speakers, n_boot=BOOTSTRAP_N,
+                                   ci=BOOTSTRAP_CI, seed=SEED)
+        m = {k: float(v) for k, v in zip(keys, point)}
+        m.update({f"{k}_ci": [float(lo), float(hi)] for k, (lo, hi) in zip(keys, cis)})
+        m["n_utterances"] = int(len(sub))
+        m["n_speakers"] = int(sub["speaker"].nunique())
+        out[grp] = m
     return out
 
 
@@ -150,9 +171,12 @@ def plot_comparison(
     grp_vals = [group_a[g]["ece"] for g in groups]
 
     fig, ax = plt.subplots(figsize=(max(7, 1.4 * len(groups)), 4.5))
-    ax.bar(x - width, base_vals, width, label="baseline (T=1)", edgecolor="black")
-    ax.bar(x, glob_vals, width, label="global T", edgecolor="black")
-    ax.bar(x + width, grp_vals, width, label="group-conditional T", edgecolor="black")
+    ax.bar(x - width, base_vals, width, label="baseline (T=1)", edgecolor="black",
+           yerr=ci_yerr(baseline_a, groups, "ece"), capsize=3)
+    ax.bar(x, glob_vals, width, label="global T", edgecolor="black",
+           yerr=ci_yerr(global_a, groups, "ece"), capsize=3)
+    ax.bar(x + width, grp_vals, width, label="group-conditional T", edgecolor="black",
+           yerr=ci_yerr(group_a, groups, "ece"), capsize=3)
     ax.set_xticks(x)
     ax.set_xticklabels(groups, rotation=20, ha="right")
     ax.set_ylabel("Expected Calibration Error")
@@ -215,6 +239,8 @@ def main():
         gl = out["track_a"]["global_T"][g]["ece"]
         gp = out["track_a"]["group_conditional_T"][g]["ece"]
         print(f"  {g:<12} {b:>10.4f} {gl:>10.4f} {gp:>10.4f}")
+        cis = [out["track_a"][c][g]["ece_ci"] for c in ("baseline", "global_T", "group_conditional_T")]
+        print(f"  {'  95% CI':<12} " + " ".join(f"{lo:.2f}-{hi:.2f}".rjust(10) for lo, hi in cis))
 
     print("\n=== Track B: mean confidence under each condition ===")
     print(f"  {'group':<16} {'baseline':>10} {'global_T':>10} {'group_T':>10}")
@@ -223,6 +249,8 @@ def main():
         gl = out["track_b"]["global_T"][g]["mean_confidence"]
         gp = out["track_b"]["group_conditional_T"][g]["mean_confidence"]
         print(f"  {g:<16} {b:>10.3f} {gl:>10.3f} {gp:>10.3f}")
+        cis = [out["track_b"][c][g]["mean_confidence_ci"] for c in ("baseline", "global_T", "group_conditional_T")]
+        print(f"  {'  95% CI':<16} " + " ".join(f"{lo:.2f}-{hi:.2f}".rjust(10) for lo, hi in cis))
 
     print("\n=== Decision rule: group-conditional vs baseline ===")
     for k, v in out["decision_rule"]["group_conditional_vs_baseline"].items():

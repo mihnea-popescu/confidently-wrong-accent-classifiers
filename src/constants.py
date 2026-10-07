@@ -116,3 +116,8 @@ SELECTIVE_ACCURACY_COVERAGE = 0.80
 # Decision rule (per prereg)
 WORST_GROUP_ECE_RELATIVE_REDUCTION_TARGET = 0.30  # 30% reduction
 BEST_GROUP_ECE_RELATIVE_INCREASE_LIMIT = 0.20     # max 20% increase
+
+# Confidence intervals: speaker-level (cluster) bootstrap, percentile method.
+# Resampling unit is the speaker, not the utterance (see speaker_bootstrap_ci).
+BOOTSTRAP_N = 2000
+BOOTSTRAP_CI = 0.95

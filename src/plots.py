@@ -22,6 +22,23 @@ import matplotlib.pyplot as plt
 from src.metrics import reliability_curve
 
 
+def ci_yerr(per_group: dict, groups: list, key: str):
+    """
+    Asymmetric matplotlib `yerr` (2, N) from per-group `<key>_ci` entries,
+    or None if the results predate bootstrap CIs.
+    """
+    if not all(f"{key}_ci" in per_group[g] for g in groups):
+        return None
+    pts = np.array([per_group[g][key] for g in groups])
+    lo = np.array([per_group[g][f"{key}_ci"][0] for g in groups])
+    hi = np.array([per_group[g][f"{key}_ci"][1] for g in groups])
+    # Clip at 0: with lumpy few-speaker bootstraps the point can sit on an edge.
+    return np.vstack([np.clip(pts - lo, 0, None), np.clip(hi - pts, 0, None)])
+
+
+_ERR_KW = dict(capsize=3, error_kw=dict(elinewidth=1, ecolor="black"))
+
+
 # ----------------------------------------------------------------------
 # Headline figure: per-group accuracy vs mean confidence
 # ----------------------------------------------------------------------
@@ -113,22 +130,32 @@ def intervention_comparison_bars(
     glob_vals = [global_a[g]["ece"] for g in groups]
     grp_vals = [group_a[g]["ece"] for g in groups]
 
-    # Tick labels: "group\n(acc=0.65)"
+    # Tick labels: "group\nacc=0.65\n3 spk"
     accs = [baseline_a[g]["top1_accuracy"] for g in groups]
-    labels = [f"{g}\n(acc={a:.2f})" for g, a in zip(groups, accs)]
+    labels = [
+        f"{g}\nacc={a:.2f}"
+        + (f"\n{baseline_a[g]['n_speakers']} spk" if "n_speakers" in baseline_a[g] else "")
+        for g, a in zip(groups, accs)
+    ]
 
     fig, ax = plt.subplots(figsize=(max(7.5, 1.4 * len(groups)), 5.0))
     ax.bar(x - width, base_vals, width, label="baseline (T=1)",
-           color="#4C72B0", edgecolor="black", linewidth=0.6)
+           color="#4C72B0", edgecolor="black", linewidth=0.6,
+           yerr=ci_yerr(baseline_a, groups, "ece"), **_ERR_KW)
     ax.bar(x, glob_vals, width, label="global T",
-           color="#DD8452", edgecolor="black", linewidth=0.6)
+           color="#DD8452", edgecolor="black", linewidth=0.6,
+           yerr=ci_yerr(global_a, groups, "ece"), **_ERR_KW)
     ax.bar(x + width, grp_vals, width, label="group-conditional T",
-           color="#55A868", edgecolor="black", linewidth=0.6)
+           color="#55A868", edgecolor="black", linewidth=0.6,
+           yerr=ci_yerr(group_a, groups, "ece"), **_ERR_KW)
 
     ax.set_xticks(x)
     ax.set_xticklabels(labels, fontsize=10)
     ax.set_ylabel("Expected Calibration Error")
     ax.set_title("Per-group ECE: baseline vs interventions (Track A)")
+    if ci_yerr(baseline_a, groups, "ece") is not None:
+        ax.text(0.0, -0.26, "Error bars: 95% speaker-level bootstrap CI",
+                transform=ax.transAxes, fontsize=8, alpha=0.7)
     ax.legend(loc="upper right")
     ax.grid(True, axis="y", alpha=0.25)
 
@@ -170,12 +197,19 @@ def track_b_confidence_chart(
     grp_vals = [track_b_group[g]["mean_confidence"] for g in groups]
 
     fig, ax = plt.subplots(figsize=(max(7.5, 1.0 * len(groups) + 2), 4.5))
+    errs = [
+        ci_yerr(src, groups, "mean_confidence")
+        for src in (track_b_baseline, track_b_global, track_b_group)
+    ]
     ax.bar(x - width, base_vals, width, label="baseline (T=1)",
-           color="#4C72B0", edgecolor="black", linewidth=0.6)
+           color="#4C72B0", edgecolor="black", linewidth=0.6,
+           yerr=errs[0], **_ERR_KW)
     ax.bar(x, glob_vals, width, label="global T",
-           color="#DD8452", edgecolor="black", linewidth=0.6)
+           color="#DD8452", edgecolor="black", linewidth=0.6,
+           yerr=errs[1], **_ERR_KW)
     ax.bar(x + width, grp_vals, width, label="group-conditional T",
-           color="#55A868", edgecolor="black", linewidth=0.6)
+           color="#55A868", edgecolor="black", linewidth=0.6,
+           yerr=errs[2], **_ERR_KW)
 
     if in_vocab_baseline_mean is not None:
         ax.axhline(
@@ -184,14 +218,25 @@ def track_b_confidence_chart(
         )
 
     ax.set_xticks(x)
-    ax.set_xticklabels(groups, rotation=20, ha="right", fontsize=10)
+    tick = [
+        f"{g} ({track_b_baseline[g]['n_speakers']} spk)"
+        if "n_speakers" in track_b_baseline[g] else g
+        for g in groups
+    ]
+    ax.set_xticklabels(tick, rotation=20, ha="right", fontsize=10)
     ax.set_ylabel("mean top-1 confidence")
-    ax.set_title("Track B (out-of-vocabulary) confidence under each condition")
-    ax.legend(loc="upper left", fontsize=9)
+    title = "Track B (out-of-vocabulary) confidence under each condition"
+    if errs[0] is not None:
+        title += "\n(error bars: 95% speaker-level bootstrap CI)"
+    ax.set_title(title)
+    ax.legend(loc="upper left", bbox_to_anchor=(1.01, 1.0), fontsize=9)
     ax.grid(True, axis="y", alpha=0.25)
 
     # Tight y-range so the small differences are visible
     all_vals = base_vals + glob_vals + grp_vals
+    for src in (track_b_baseline, track_b_global, track_b_group):
+        for g in groups:
+            all_vals += src[g].get("mean_confidence_ci", [])
     pad = 0.005
     ax.set_ylim(min(all_vals) - pad, max(all_vals) + pad)
 
