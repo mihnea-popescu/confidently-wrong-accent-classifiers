@@ -25,9 +25,13 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 from src.constants import (
+    BOOTSTRAP_CI,
+    BOOTSTRAP_N,
     ECE_BINS,
     FIGURES_DIR,
+    LOGIT_SCALE,
     RESULTS_DIR,
+    SEED,
     SELECTIVE_ACCURACY_COVERAGE,
     SPLITS_DIR,
 )
@@ -36,6 +40,7 @@ from src.metrics import (
     expected_calibration_error,
     predictive_entropy,
     selective_accuracy_at_coverage,
+    speaker_bootstrap_ci,
     top1_accuracy,
 )
 from src.plots import grid_reliability_diagrams
@@ -58,11 +63,21 @@ def load_inference(split_name: str) -> tuple[pd.DataFrame, np.ndarray]:
     perm = np.array([id_to_idx[int(u)] for u in df["utterance_id"]], dtype=int)
     scores = npz["scores"][perm]
 
-    # Model returns log-probabilities; convert to probabilities for metrics.
-    # softmax is invariant to additive shifts, so log_softmax -> exp gives probs.
-    probs = np.exp(scores - scores.max(axis=1, keepdims=True))
+    # The model returns raw cosine similarities, NOT log-probabilities.
+    # Multiply by the training-time AAM-softmax scale to recover logits before
+    # taking the softmax. See LOGIT_SCALE in src/constants.py.
+    logits = scores * LOGIT_SCALE
+    probs = np.exp(logits - logits.max(axis=1, keepdims=True))
     probs = probs / probs.sum(axis=1, keepdims=True)
     return df, probs
+
+
+def add_bootstrap_cis(metrics: dict, stats, keys: list, speakers) -> None:
+    """Add `<key>_ci` = [lo, hi] (speaker-level bootstrap) for each key."""
+    cis = speaker_bootstrap_ci(stats, speakers, n_boot=BOOTSTRAP_N,
+                               ci=BOOTSTRAP_CI, seed=SEED)
+    for k, (lo, hi) in zip(keys, cis):
+        metrics[f"{k}_ci"] = [float(lo), float(hi)]
 
 
 def compute_track_a_metrics(df: pd.DataFrame, probs: np.ndarray) -> dict:
@@ -91,6 +106,22 @@ def compute_track_a_metrics(df: pd.DataFrame, probs: np.ndarray) -> dict:
             "mean_confidence": float(confs.mean()),
             "mean_entropy": float(predictive_entropy(sub_probs).mean()),
         }
+
+        def stats(i):
+            return [
+                correct[i].mean(),
+                expected_calibration_error(confs[i], correct[i], n_bins=ECE_BINS),
+                brier_score_multiclass(sub_probs[i], targets[i]),
+                selective_accuracy_at_coverage(
+                    confs[i], correct[i], coverage=SELECTIVE_ACCURACY_COVERAGE
+                ),
+                confs[i].mean(),
+            ]
+        add_bootstrap_cis(
+            out[grp], stats,
+            ["top1_accuracy", "ece", "brier", "selective_accuracy_80", "mean_confidence"],
+            sub["speaker"].to_numpy(),
+        )
     return out
 
 
@@ -113,6 +144,10 @@ def compute_track_b_metrics(df: pd.DataFrame, probs: np.ndarray) -> dict:
             "p25_confidence": float(np.percentile(confs, 25)),
             "p75_confidence": float(np.percentile(confs, 75)),
         }
+        add_bootstrap_cis(
+            out[grp], lambda i: [confs[i].mean(), ents[i].mean()],
+            ["mean_confidence", "mean_entropy"], sub["speaker"].to_numpy(),
+        )
     return out
 
 
@@ -244,6 +279,8 @@ def main():
             f"{m['ece']:>7.4f} {m['brier']:>7.4f} {m['selective_accuracy_80']:>6.3f} "
             f"{m['mean_confidence']:>6.3f}"
         )
+        lo, hi = m["ece_ci"]
+        print(f"  {'':<12} {'':>6} {'':>6} ECE 95% CI [{lo:.3f}, {hi:.3f}]")
 
     print("\n=== Track B (out-of-vocabulary) ===")
     print(f"  {'group':<16} {'n_utt':>6} {'mean_conf':>10} {'mean_ent':>10}")
@@ -252,6 +289,8 @@ def main():
             f"  {g:<16} {m['n_utterances']:>6} {m['mean_confidence']:>10.3f} "
             f"{m['mean_entropy']:>10.3f}"
         )
+        lo, hi = m["mean_confidence_ci"]
+        print(f"  {'':<16} {'':>6} conf 95% CI [{lo:.3f}, {hi:.3f}]")
 
     print("\n=== Pre-registered hard cases ===")
     for hc, info in hard_cases.items():

@@ -2,258 +2,681 @@
   "track_a": {
     "baseline": {
       "african": {
-        "ece": 0.07468394649483145,
+        "ece": 0.7775329040520214,
         "top1_accuracy": 0.007352941176470588,
-        "mean_confidence": 0.08203688767130204,
-        "n_utterances": 136
+        "mean_confidence": 0.784885845228492,
+        "ece_ci": [
+          0.7535205396372766,
+          0.8230031260288784
+        ],
+        "top1_accuracy_ci": [
+          0.0,
+          0.011235955056179775
+        ],
+        "mean_confidence_ci": [
+          0.7647564946934565,
+          0.8230031260288782
+        ],
+        "n_utterances": 136,
+        "n_speakers": 2
       },
       "england": {
-        "ece": 0.5562486981924388,
+        "ece": 0.2612188315365144,
         "top1_accuracy": 0.645320197044335,
-        "mean_confidence": 0.08907149885189608,
-        "n_utterances": 406
+        "mean_confidence": 0.9065390285808492,
+        "ece_ci": [
+          0.16585119339706195,
+          0.5644135480375518
+        ],
+        "top1_accuracy_ci": [
+          0.3237410071942446,
+          0.7474402730375427
+        ],
+        "mean_confidence_ci": [
+          0.8881545552317964,
+          0.926021109371498
+        ],
+        "n_utterances": 406,
+        "n_speakers": 4
       },
       "indian": {
-        "ece": 0.4656651468621914,
+        "ece": 0.30333803546698973,
         "top1_accuracy": 0.5528455284552846,
-        "mean_confidence": 0.08718038159309317,
-        "n_utterances": 123
+        "mean_confidence": 0.8561835639222743,
+        "ece_ci": [
+          0.25818549475224095,
+          0.8135617455436499
+        ],
+        "top1_accuracy_ci": [
+          0.0,
+          0.6017699115044248
+        ],
+        "mean_confidence_ci": [
+          0.8135617455436497,
+          0.8599554062566659
+        ],
+        "n_utterances": 123,
+        "n_speakers": 2
       },
       "ireland": {
-        "ece": 0.06284082875491241,
+        "ece": 0.8436177625041177,
         "top1_accuracy": 0.023923444976076555,
-        "mean_confidence": 0.08676427373098897,
-        "n_utterances": 418
+        "mean_confidence": 0.8642237998028202,
+        "ece_ci": [
+          0.7999414928419168,
+          0.8871542202198595
+        ],
+        "top1_accuracy_ci": [
+          0.0,
+          0.07518796992481203
+        ],
+        "mean_confidence_ci": [
+          0.8526047616653377,
+          0.8871542202198596
+        ],
+        "n_utterances": 418,
+        "n_speakers": 3
       },
       "scotland": {
-        "ece": 0.3429814901953294,
+        "ece": 0.4319421370964604,
         "top1_accuracy": 0.4305555555555556,
-        "mean_confidence": 0.08757406536022617,
-        "n_utterances": 216
+        "mean_confidence": 0.8546981756020637,
+        "ece_ci": [
+          0.38734694859595553,
+          0.5111496725042921
+        ],
+        "top1_accuracy_ci": [
+          0.3944954128440367,
+          0.4672897196261682
+        ],
+        "mean_confidence_ci": [
+          0.8443815073818949,
+          0.8648255471576423
+        ],
+        "n_utterances": 216,
+        "n_speakers": 2
       },
       "us": {
-        "ece": 0.6470570938919232,
+        "ece": 0.16679743475653763,
         "top1_accuracy": 0.7342995169082126,
-        "mean_confidence": 0.08724242301628937,
-        "n_utterances": 207
+        "mean_confidence": 0.9010969516647501,
+        "ece_ci": [
+          0.12227792097369639,
+          0.5653801742831757
+        ],
+        "top1_accuracy_ci": [
+          0.125,
+          0.8539325842696629
+        ],
+        "mean_confidence_ci": [
+          0.6903801742831757,
+          0.9632954980021611
+        ],
+        "n_utterances": 207,
+        "n_speakers": 3
       }
     },
     "global_T": {
       "african": {
-        "ece": 0.0856468969041335,
+        "ece": 0.1623413421242341,
         "top1_accuracy": 0.007352941176470588,
-        "mean_confidence": 0.0929998380806041,
-        "n_utterances": 136
+        "mean_confidence": 0.16969428330070468,
+        "ece_ci": [
+          0.15290005023208075,
+          0.18021953315405637
+        ],
+        "top1_accuracy_ci": [
+          0.0,
+          0.011235955056179775
+        ],
+        "mean_confidence_ci": [
+          0.16413600528826056,
+          0.1802195331540564
+        ],
+        "n_utterances": 136,
+        "n_speakers": 2
       },
       "england": {
-        "ece": 0.5403395266626081,
+        "ece": 0.4164828538801565,
         "top1_accuracy": 0.645320197044335,
-        "mean_confidence": 0.10498067038172698,
-        "n_utterances": 406
+        "mean_confidence": 0.22883734316417853,
+        "ece_ci": [
+          0.11715478031959028,
+          0.5077764616718945
+        ],
+        "top1_accuracy_ci": [
+          0.3237410071942446,
+          0.7474402730375427
+        ],
+        "mean_confidence_ci": [
+          0.21222513702310208,
+          0.2411773486212024
+        ],
+        "n_utterances": 406,
+        "n_speakers": 4
       },
       "indian": {
-        "ece": 0.45102453799080916,
+        "ece": 0.3392021318243694,
         "top1_accuracy": 0.5528455284552846,
-        "mean_confidence": 0.1018209904644754,
-        "n_utterances": 123
+        "mean_confidence": 0.2136433966309151,
+        "ece_ci": [
+          0.18540639004191722,
+          0.38562766473289034
+        ],
+        "top1_accuracy_ci": [
+          0.0,
+          0.6017699115044248
+        ],
+        "mean_confidence_ci": [
+          0.18540639004191725,
+          0.21614224677153443
+        ],
+        "n_utterances": 123,
+        "n_speakers": 2
       },
       "ireland": {
-        "ece": 0.07701523872417311,
+        "ece": 0.1826679320392534,
         "top1_accuracy": 0.023923444976076555,
-        "mean_confidence": 0.10093868370024967,
-        "n_utterances": 418
+        "mean_confidence": 0.20659137701532992,
+        "ece_ci": [
+          0.12717742111478378,
+          0.21424541262205307
+        ],
+        "top1_accuracy_ci": [
+          0.0,
+          0.07518796992481203
+        ],
+        "mean_confidence_ci": [
+          0.2023653910395958,
+          0.21424541262205313
+        ],
+        "n_utterances": 418,
+        "n_speakers": 3
       },
       "scotland": {
-        "ece": 0.32841201930936326,
+        "ece": 0.22978927939534163,
         "top1_accuracy": 0.4305555555555556,
-        "mean_confidence": 0.10214353624619232,
-        "n_utterances": 216
+        "mean_confidence": 0.20851580059378869,
+        "ece_ci": [
+          0.22978927939534163,
+          0.25816141185529123
+        ],
+        "top1_accuracy_ci": [
+          0.3944954128440367,
+          0.4672897196261682
+        ],
+        "mean_confidence_ci": [
+          0.2065923644014312,
+          0.21047518886450797
+        ],
+        "n_utterances": 216,
+        "n_speakers": 2
       },
       "us": {
-        "ece": 0.6323404421066219,
+        "ece": 0.5180557911005761,
         "top1_accuracy": 0.7342995169082126,
-        "mean_confidence": 0.10195907480159071,
-        "n_utterances": 207
+        "mean_confidence": 0.21624372580763637,
+        "ece_ci": [
+          0.17134172817322277,
+          0.6047552456044023
+        ],
+        "top1_accuracy_ci": [
+          0.125,
+          0.8539325842696629
+        ],
+        "mean_confidence_ci": [
+          0.15885860007585972,
+          0.24917733866526062
+        ],
+        "n_utterances": 207,
+        "n_speakers": 3
       }
     },
     "group_conditional_T": {
       "african": {
-        "ece": 0.05547247117543004,
+        "ece": 0.06055721160814639,
         "top1_accuracy": 0.007352941176470588,
-        "mean_confidence": 0.06282541235190063,
-        "n_utterances": 136
+        "mean_confidence": 0.06791015278461698,
+        "ece_ci": [
+          0.056502097618457724,
+          0.0682360444822377
+        ],
+        "top1_accuracy_ci": [
+          0.0,
+          0.011235955056179775
+        ],
+        "mean_confidence_ci": [
+          0.0677380526746375,
+          0.0682360444822377
+        ],
+        "n_utterances": 136,
+        "n_speakers": 2
       },
       "england": {
-        "ece": 0.04733258267179927,
+        "ece": 0.06121106044379262,
         "top1_accuracy": 0.645320197044335,
-        "mean_confidence": 0.6648503282245117,
-        "n_utterances": 406
+        "mean_confidence": 0.6099020269200667,
+        "ece_ci": [
+          0.06121106044379255,
+          0.2631903107034317
+        ],
+        "top1_accuracy_ci": [
+          0.3237410071942446,
+          0.7474402730375427
+        ],
+        "mean_confidence_ci": [
+          0.5623034936885145,
+          0.6427851769195423
+        ],
+        "n_utterances": 406,
+        "n_speakers": 4
       },
       "indian": {
-        "ece": 0.35288084872370673,
+        "ece": 0.1874026079474923,
         "top1_accuracy": 0.5528455284552846,
-        "mean_confidence": 0.1999646797315779,
-        "n_utterances": 123
+        "mean_confidence": 0.4090526221999721,
+        "ece_ci": [
+          0.18740260794749225,
+          0.3358084126704367
+        ],
+        "top1_accuracy_ci": [
+          0.0,
+          0.6017699115044248
+        ],
+        "mean_confidence_ci": [
+          0.3358084126704367,
+          0.4155344106539133
+        ],
+        "n_utterances": 123,
+        "n_speakers": 2
       },
       "ireland": {
-        "ece": 0.03889999131058795,
+        "ece": 0.045151137137044044,
         "top1_accuracy": 0.023923444976076555,
-        "mean_confidence": 0.06282343628666451,
-        "n_utterances": 418
+        "mean_confidence": 0.0690745821131206,
+        "ece_ci": [
+          0.007214525118304488,
+          0.06928301458832661
+        ],
+        "top1_accuracy_ci": [
+          0.0,
+          0.07518796992481203
+        ],
+        "mean_confidence_ci": [
+          0.06883467608922508,
+          0.06928301458832661
+        ],
+        "n_utterances": 418,
+        "n_speakers": 3
       },
       "scotland": {
-        "ece": 0.3253293749998001,
+        "ece": 0.23308906472820218,
         "top1_accuracy": 0.4305555555555556,
-        "mean_confidence": 0.10522618055575551,
-        "n_utterances": 216
+        "mean_confidence": 0.21474108581559434,
+        "ece_ci": [
+          0.23308906472820212,
+          0.26527775068165693
+        ],
+        "top1_accuracy_ci": [
+          0.3944954128440367,
+          0.4672897196261682
+        ],
+        "mean_confidence_ci": [
+          0.2126948002100372,
+          0.21682561975022735
+        ],
+        "n_utterances": 216,
+        "n_speakers": 2
       },
       "us": {
-        "ece": 0.07336150833628528,
+        "ece": 0.17587902384920717,
         "top1_accuracy": 0.7342995169082126,
-        "mean_confidence": 0.7496009175517444,
-        "n_utterances": 207
+        "mean_confidence": 0.5584204930590054,
+        "ece_ci": [
+          0.15959416548256078,
+          0.3396378033142045
+        ],
+        "top1_accuracy_ci": [
+          0.125,
+          0.8539325842696629
+        ],
+        "mean_confidence_ci": [
+          0.3675168031573399,
+          0.6580155558000568
+        ],
+        "n_utterances": 207,
+        "n_speakers": 3
       }
     }
   },
   "track_b": {
     "baseline": {
       "Bulgarian": {
-        "mean_confidence": 0.08269925623917963,
-        "mean_entropy": 2.7651538080338476,
-        "n_utterances": 128
+        "mean_confidence": 0.8263122234649968,
+        "mean_entropy": 0.47795576583204413,
+        "mean_confidence_ci": [
+          0.7987384105901626,
+          0.8289046332224599
+        ],
+        "mean_entropy_ci": [
+          0.4493728402479604,
+          0.4806430494339665
+        ],
+        "n_utterances": 128,
+        "n_speakers": 2
       },
       "Catalan": {
-        "mean_confidence": 0.08535189229809195,
-        "mean_entropy": 2.763145117533509,
-        "n_utterances": 230
+        "mean_confidence": 0.8817774367254855,
+        "mean_entropy": 0.32743745014128955,
+        "mean_confidence_ci": [
+          0.8785088127217637,
+          0.8924307297746529
+        ],
+        "mean_entropy_ci": [
+          0.26207106717989803,
+          0.3474930449135348
+        ],
+        "n_utterances": 230,
+        "n_speakers": 2
       },
       "Italian": {
-        "mean_confidence": 0.08393020319242003,
-        "mean_entropy": 2.7638819139860145,
-        "n_utterances": 126
+        "mean_confidence": 0.8573814036148731,
+        "mean_entropy": 0.4056710386884769,
+        "mean_confidence_ci": [
+          0.8419574479908565,
+          0.8697205681140865
+        ],
+        "mean_entropy_ci": [
+          0.3534666482785984,
+          0.47092652670082497
+        ],
+        "n_utterances": 126,
+        "n_speakers": 2
       },
       "Mandarin": {
-        "mean_confidence": 0.0826132605729854,
-        "mean_entropy": 2.764675679721534,
-        "n_utterances": 298
+        "mean_confidence": 0.8382086643905097,
+        "mean_entropy": 0.45606913640434454,
+        "mean_confidence_ci": [
+          0.831471973496131,
+          0.8440190602869112
+        ],
+        "mean_entropy_ci": [
+          0.4518550306008128,
+          0.4609550561765553
+        ],
+        "n_utterances": 298,
+        "n_speakers": 2
       },
       "OOV-aggregate": {
-        "mean_confidence": 0.08501028155518554,
-        "mean_entropy": 2.7634713966041615,
-        "n_utterances": 1819
+        "mean_confidence": 0.8679432398766793,
+        "mean_entropy": 0.36799208976397396,
+        "mean_confidence_ci": [
+          0.8357391960039184,
+          0.9043984321976891
+        ],
+        "mean_entropy_ci": [
+          0.2668612979270313,
+          0.4615370566032399
+        ],
+        "n_utterances": 1819,
+        "n_speakers": 16
       },
       "Spanish": {
-        "mean_confidence": 0.08587714107610345,
-        "mean_entropy": 2.762650896830115,
-        "n_utterances": 495
+        "mean_confidence": 0.8516692540331802,
+        "mean_entropy": 0.38998153582867195,
+        "mean_confidence_ci": [
+          0.8162694277315399,
+          0.8880810393697595
+        ],
+        "mean_entropy_ci": [
+          0.3032015312346517,
+          0.47332893129433357
+        ],
+        "n_utterances": 495,
+        "n_speakers": 4
       },
       "Vietnamese": {
-        "mean_confidence": 0.08541899656346824,
-        "mean_entropy": 2.7633191814051945,
-        "n_utterances": 381
+        "mean_confidence": 0.8801973579930898,
+        "mean_entropy": 0.3398552050710414,
+        "mean_confidence_ci": [
+          0.8503817136057732,
+          0.9015903177868275
+        ],
+        "mean_entropy_ci": [
+          0.2743506687857518,
+          0.43075836277723656
+        ],
+        "n_utterances": 381,
+        "n_speakers": 5
       }
     },
     "global_T": {
       "Bulgarian": {
-        "mean_confidence": 0.09427008029859604,
-        "mean_entropy": 2.7557737947436953,
-        "n_utterances": 128
+        "mean_confidence": 0.17902127105892013,
+        "mean_entropy": 2.626636454652033,
+        "mean_confidence_ci": [
+          0.17767506819871628,
+          0.1933399742083611
+        ],
+        "mean_entropy_ci": [
+          2.573642910297505,
+          2.6316187536939117
+        ],
+        "n_utterances": 128,
+        "n_speakers": 2
       },
       "Catalan": {
-        "mean_confidence": 0.09855696401907435,
-        "mean_entropy": 2.751237383107471,
-        "n_utterances": 230
+        "mean_confidence": 0.19566248726854316,
+        "mean_entropy": 2.589621561393665,
+        "mean_confidence_ci": [
+          0.18814944216458984,
+          0.2201494490888355
+        ],
+        "mean_entropy_ci": [
+          2.550539496015995,
+          2.6016126496345406
+        ],
+        "n_utterances": 230,
+        "n_speakers": 2
       },
       "Italian": {
-        "mean_confidence": 0.09623195291597263,
-        "mean_entropy": 2.7529895491612892,
-        "n_utterances": 126
+        "mean_confidence": 0.18626722606396034,
+        "mean_entropy": 2.607003996909196,
+        "mean_confidence_ci": [
+          0.17034368638435157,
+          0.19900605780764735
+        ],
+        "mean_entropy_ci": [
+          2.5956156845190037,
+          2.6212393873969364
+        ],
+        "n_utterances": 126,
+        "n_speakers": 2
       },
       "Mandarin": {
-        "mean_confidence": 0.09406058380284901,
-        "mean_entropy": 2.754819422285386,
-        "n_utterances": 298
+        "mean_confidence": 0.1767649641794539,
+        "mean_entropy": 2.6237418168681703,
+        "mean_confidence_ci": [
+          0.1758654475672666,
+          0.17780788199068548
+        ],
+        "mean_entropy_ci": [
+          2.622080333983713,
+          2.6256681738356566
+        ],
+        "n_utterances": 298,
+        "n_speakers": 2
       },
       "OOV-aggregate": {
-        "mean_confidence": 0.09806118076675963,
-        "mean_entropy": 2.751981121792281,
-        "n_utterances": 1819
+        "mean_confidence": 0.19510056986446533,
+        "mean_entropy": 2.594545041427616,
+        "mean_confidence_ci": [
+          0.1789135041989482,
+          0.21267710184155417
+        ],
+        "mean_entropy_ci": [
+          2.574587699534001,
+          2.6124096181210095
+        ],
+        "n_utterances": 1819,
+        "n_speakers": 16
       },
       "Spanish": {
-        "mean_confidence": 0.09944551317966838,
-        "mean_entropy": 2.749997196043196,
-        "n_utterances": 495
+        "mean_confidence": 0.19960118444553732,
+        "mean_entropy": 2.575586894405285,
+        "mean_confidence_ci": [
+          0.19215986161596782,
+          0.20927984206767583
+        ],
+        "mean_entropy_ci": [
+          2.572544646214774,
+          2.5883963604705933
+        ],
+        "n_utterances": 495,
+        "n_speakers": 4
       },
       "Vietnamese": {
-        "mean_confidence": 0.09870878798939405,
-        "mean_entropy": 2.7515747330332125,
-        "n_utterances": 381
+        "mean_confidence": 0.19722890176753355,
+        "mean_entropy": 2.589948932679685,
+        "mean_confidence_ci": [
+          0.18162655501346006,
+          0.20969921944433642
+        ],
+        "mean_entropy_ci": [
+          2.5713546711707993,
+          2.6116821708159126
+        ],
+        "n_utterances": 381,
+        "n_speakers": 5
       }
     },
     "group_conditional_T": {
       "Bulgarian": {
-        "mean_confidence": 0.09427008029859604,
-        "mean_entropy": 2.7557737947436953,
-        "n_utterances": 128
+        "mean_confidence": 0.17902127105892013,
+        "mean_entropy": 2.626636454652033,
+        "mean_confidence_ci": [
+          0.17767506819871628,
+          0.1933399742083611
+        ],
+        "mean_entropy_ci": [
+          2.573642910297505,
+          2.6316187536939117
+        ],
+        "n_utterances": 128,
+        "n_speakers": 2
       },
       "Catalan": {
-        "mean_confidence": 0.09855696401907435,
-        "mean_entropy": 2.751237383107471,
-        "n_utterances": 230
+        "mean_confidence": 0.19566248726854316,
+        "mean_entropy": 2.589621561393665,
+        "mean_confidence_ci": [
+          0.18814944216458984,
+          0.2201494490888355
+        ],
+        "mean_entropy_ci": [
+          2.550539496015995,
+          2.6016126496345406
+        ],
+        "n_utterances": 230,
+        "n_speakers": 2
       },
       "Italian": {
-        "mean_confidence": 0.09623195291597263,
-        "mean_entropy": 2.7529895491612892,
-        "n_utterances": 126
+        "mean_confidence": 0.18626722606396034,
+        "mean_entropy": 2.607003996909196,
+        "mean_confidence_ci": [
+          0.17034368638435157,
+          0.19900605780764735
+        ],
+        "mean_entropy_ci": [
+          2.5956156845190037,
+          2.6212393873969364
+        ],
+        "n_utterances": 126,
+        "n_speakers": 2
       },
       "Mandarin": {
-        "mean_confidence": 0.09406058380284901,
-        "mean_entropy": 2.754819422285386,
-        "n_utterances": 298
+        "mean_confidence": 0.1767649641794539,
+        "mean_entropy": 2.6237418168681703,
+        "mean_confidence_ci": [
+          0.1758654475672666,
+          0.17780788199068548
+        ],
+        "mean_entropy_ci": [
+          2.622080333983713,
+          2.6256681738356566
+        ],
+        "n_utterances": 298,
+        "n_speakers": 2
       },
       "OOV-aggregate": {
-        "mean_confidence": 0.09806118076675963,
-        "mean_entropy": 2.751981121792281,
-        "n_utterances": 1819
+        "mean_confidence": 0.19510056986446533,
+        "mean_entropy": 2.594545041427616,
+        "mean_confidence_ci": [
+          0.1789135041989482,
+          0.21267710184155417
+        ],
+        "mean_entropy_ci": [
+          2.574587699534001,
+          2.6124096181210095
+        ],
+        "n_utterances": 1819,
+        "n_speakers": 16
       },
       "Spanish": {
-        "mean_confidence": 0.09944551317966838,
-        "mean_entropy": 2.749997196043196,
-        "n_utterances": 495
+        "mean_confidence": 0.19960118444553732,
+        "mean_entropy": 2.575586894405285,
+        "mean_confidence_ci": [
+          0.19215986161596782,
+          0.20927984206767583
+        ],
+        "mean_entropy_ci": [
+          2.572544646214774,
+          2.5883963604705933
+        ],
+        "n_utterances": 495,
+        "n_speakers": 4
       },
       "Vietnamese": {
-        "mean_confidence": 0.09870878798939405,
-        "mean_entropy": 2.7515747330332125,
-        "n_utterances": 381
+        "mean_confidence": 0.19722890176753355,
+        "mean_entropy": 2.589948932679685,
+        "mean_confidence_ci": [
+          0.18162655501346006,
+          0.20969921944433642
+        ],
+        "mean_entropy_ci": [
+          2.5713546711707993,
+          2.6116821708159126
+        ],
+        "n_utterances": 381,
+        "n_speakers": 5
       }
     }
   },
   "decision_rule": {
     "group_conditional_vs_baseline": {
-      "baseline_worst_group": "us",
-      "baseline_worst_ece": 0.6470570938919232,
-      "intervention_ece_for_baseline_worst_group": 0.07336150833628528,
-      "worst_group_relative_reduction": 0.8866228204144552,
+      "baseline_worst_group": "ireland",
+      "baseline_worst_ece": 0.8436177625041177,
+      "intervention_ece_for_baseline_worst_group": 0.045151137137044044,
+      "worst_group_relative_reduction": 0.9464791530668801,
       "criterion_1_met (>=30% reduction)": true,
-      "baseline_best_group": "ireland",
-      "baseline_best_ece": 0.06284082875491241,
-      "intervention_ece_for_baseline_best_group": 0.03889999131058795,
-      "best_group_relative_increase": -0.38097583877667984,
+      "baseline_best_group": "us",
+      "baseline_best_ece": 0.16679743475653763,
+      "intervention_ece_for_baseline_best_group": 0.17587902384920717,
+      "best_group_relative_increase": 0.054446815119940484,
       "criterion_2_met (<=20% increase)": true,
       "verdict": "successful"
     },
     "global_vs_baseline": {
-      "baseline_worst_group": "us",
-      "baseline_worst_ece": 0.6470570938919232,
-      "intervention_ece_for_baseline_worst_group": 0.6323404421066219,
-      "worst_group_relative_reduction": 0.022743977191847994,
-      "criterion_1_met (>=30% reduction)": false,
-      "baseline_best_group": "ireland",
-      "baseline_best_ece": 0.06284082875491241,
-      "intervention_ece_for_baseline_best_group": 0.07701523872417311,
-      "best_group_relative_increase": 0.22556051933278573,
+      "baseline_worst_group": "ireland",
+      "baseline_worst_ece": 0.8436177625041177,
+      "intervention_ece_for_baseline_worst_group": 0.1826679320392534,
+      "worst_group_relative_reduction": 0.7834707373905467,
+      "criterion_1_met (>=30% reduction)": true,
+      "baseline_best_group": "us",
+      "baseline_best_ece": 0.16679743475653763,
+      "intervention_ece_for_baseline_best_group": 0.5180557911005761,
+      "best_group_relative_increase": 2.1058978326420026,
       "criterion_2_met (<=20% increase)": false,
-      "verdict": "failed"
+      "verdict": "partial"
     }
   }
 }

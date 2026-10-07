@@ -159,6 +159,46 @@ def selective_accuracy_at_coverage(
     return float(correctness[keep].mean())
 
 
+def accuracy_coverage_curve(
+    confidences: np.ndarray,
+    correctness: np.ndarray,
+) -> dict:
+    """
+    Max-softmax abstention swept over every threshold: answer the most
+    confident k examples, abstain on the rest, for k = 1..N.
+
+    Returns
+    -------
+    dict with keys:
+        coverage           : (N,) array, k / N
+        selective_accuracy : (N,) array, accuracy on the k answered examples
+        aurc               : float, area under the risk (= 1 - accuracy)
+                             vs coverage curve (Geifman & El-Yaniv 2017).
+                             Lower is better; a confidence that perfectly
+                             ranks correct above incorrect reaches the
+                             minimum for its accuracy, a random one sits at
+                             1 - accuracy.
+
+    Ties in confidence are broken by input order (stable sort), so the curve
+    is deterministic.
+    """
+    confidences = np.asarray(confidences, dtype=float)
+    correctness = np.asarray(correctness, dtype=float)
+    assert confidences.shape == correctness.shape and confidences.ndim == 1
+    n = len(confidences)
+    if n == 0:
+        return {"coverage": np.array([]), "selective_accuracy": np.array([]),
+                "aurc": float("nan")}
+    order = np.argsort(-confidences, kind="stable")
+    k = np.arange(1, n + 1)
+    sel_acc = np.cumsum(correctness[order]) / k
+    return {
+        "coverage": k / n,
+        "selective_accuracy": sel_acc,
+        "aurc": float(np.mean(1.0 - sel_acc)),
+    }
+
+
 def top1_accuracy(probs: np.ndarray, labels: np.ndarray) -> float:
     """Standard top-1 accuracy."""
     probs = np.asarray(probs)
@@ -177,3 +217,55 @@ def predictive_entropy(probs: np.ndarray, eps: float = 1e-12) -> np.ndarray:
     """
     probs = np.asarray(probs, dtype=float)
     return -(probs * np.log(np.clip(probs, eps, 1.0))).sum(axis=1)
+
+
+def speaker_bootstrap_ci(
+    stat_fn,
+    speakers: np.ndarray,
+    n_boot: int = 2000,
+    ci: float = 0.95,
+    seed: int = 0,
+) -> np.ndarray:
+    """
+    Percentile CI from a speaker-level (cluster) bootstrap.
+
+    Utterances from one speaker are strongly correlated, so resampling
+    utterances would treat a 2-speaker group as hundreds of independent
+    points and give falsely narrow intervals. Instead we resample whole
+    speakers with replacement and keep all of each drawn speaker's
+    utterances.
+
+    With very few speakers the bootstrap distribution is coarse (2 speakers
+    -> only 3 distinct resamples), so the interval is roughly the range of
+    the per-speaker values. That is the honest answer, not a bug.
+
+    Parameters
+    ----------
+    stat_fn  : callable(idx) -> float or (M,) array
+        Computes the statistic(s) on the rows at integer positions `idx`.
+    speakers : (N,) array of speaker ids, one per row.
+    n_boot   : number of bootstrap resamples.
+    ci       : central coverage of the interval.
+    seed     : RNG seed. Using the same seed across conditions gives paired
+               resamples (the same speakers drawn under each condition).
+
+    Returns
+    -------
+    (2,) array [lo, hi] for a scalar statistic, else (M, 2).
+    """
+    speakers = np.asarray(speakers)
+    uniq = np.unique(speakers)
+    by_spk = [np.flatnonzero(speakers == s) for s in uniq]
+    rng = np.random.default_rng(seed)
+
+    boots = []
+    for _ in range(n_boot):
+        pick = rng.integers(0, len(uniq), len(uniq))
+        idx = np.concatenate([by_spk[k] for k in pick])
+        boots.append(np.atleast_1d(stat_fn(idx)))
+    boots = np.asarray(boots, dtype=float)  # (n_boot, M)
+
+    alpha = (1.0 - ci) / 2.0
+    lo, hi = np.nanpercentile(boots, [100 * alpha, 100 * (1 - alpha)], axis=0)
+    out = np.stack([lo, hi], axis=-1)  # (M, 2)
+    return out[0] if out.shape[0] == 1 else out

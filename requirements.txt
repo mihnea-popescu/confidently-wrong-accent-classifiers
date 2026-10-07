@@ -6,6 +6,7 @@ speechbrain>=1.0,<2.0
 numpy>=1.24,<2.0
 pandas>=2.0,<3.0
 scipy>=1.10
+scikit-learn>=1.2  # isotonic regression (09)
 
 # Calibration metrics
 torchmetrics>=1.0

@@ -17,6 +17,8 @@ from src.metrics import (
     selective_accuracy_at_coverage,
     top1_accuracy,
     predictive_entropy,
+    speaker_bootstrap_ci,
+    accuracy_coverage_curve,
 )
 
 
@@ -109,3 +111,49 @@ def test_predictive_entropy_uniform_is_log_k():
     probs = np.full((1, k), 1.0 / k)
     h = predictive_entropy(probs)
     assert h[0] == pytest.approx(np.log(k), abs=1e-9)
+
+
+def test_speaker_bootstrap_two_speakers_spans_their_means():
+    # Two speakers with constant values 0.2 and 0.8. Speaker resampling can
+    # only produce means 0.2, 0.5 or 0.8, so the 95% CI is [0.2, 0.8].
+    vals = np.array([0.2] * 10 + [0.8] * 30)
+    spk = np.array(["a"] * 10 + ["b"] * 30)
+    lo, hi = speaker_bootstrap_ci(lambda idx: vals[idx].mean(), spk, n_boot=500)
+    assert lo == pytest.approx(0.2)
+    assert hi == pytest.approx(0.8)
+
+
+def test_speaker_bootstrap_single_speaker_is_degenerate():
+    vals = np.linspace(0, 1, 50)
+    spk = np.zeros(50)
+    lo, hi = speaker_bootstrap_ci(lambda idx: vals[idx].mean(), spk, n_boot=100)
+    assert lo == pytest.approx(0.5) and hi == pytest.approx(0.5)
+
+
+def test_speaker_bootstrap_vector_stat_shape():
+    vals = np.random.default_rng(0).random(60)
+    spk = np.repeat(np.arange(6), 10)
+    out = speaker_bootstrap_ci(
+        lambda idx: [vals[idx].mean(), vals[idx].max()], spk, n_boot=200
+    )
+    assert out.shape == (2, 2)
+    assert np.all(out[:, 0] <= out[:, 1])
+
+
+def test_accuracy_coverage_curve_handcomputed():
+    # Ranked by confidence: correct, wrong, correct, wrong.
+    confs = np.array([0.6, 0.9, 0.4, 0.7])
+    correct = np.array([0, 1, 0, 1])
+    c = accuracy_coverage_curve(confs, correct)
+    assert np.allclose(c["coverage"], [0.25, 0.5, 0.75, 1.0])
+    assert np.allclose(c["selective_accuracy"], [1.0, 1.0, 2 / 3, 0.5])
+    assert c["aurc"] == pytest.approx(np.mean([0, 0, 1 / 3, 0.5]))
+
+
+def test_accuracy_coverage_curve_full_coverage_is_accuracy():
+    rng = np.random.default_rng(0)
+    confs, correct = rng.random(200), rng.integers(0, 2, 200)
+    c = accuracy_coverage_curve(confs, correct)
+    assert c["selective_accuracy"][-1] == pytest.approx(correct.mean())
+    assert selective_accuracy_at_coverage(confs, correct, 0.5) == pytest.approx(
+        c["selective_accuracy"][99])

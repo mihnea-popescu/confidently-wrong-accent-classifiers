@@ -65,9 +65,20 @@ CV_LABELS = [
 # temperature scaling. Without S, any softmax over cosines comes out
 # near-uniform and ECE is meaningless.
 #
-# If the actual training scale differed from 30, the fitted temperature
-# will absorb the discrepancy (T near 1.0 means our scale assumption is
-# correct; T far from 1.0 may indicate a mismatch — note for limitations).
+# S and T are exactly degenerate: softmax(S * cos / T) depends only on the
+# ratio S/T, so fitting T freely means only their ratio is identifiable. S is
+# therefore DECLARED here, not fit — it fixes what "the uncalibrated model"
+# means, which is the only thing the baseline metrics depend on. Every metric
+# computed after a fitted T is invariant to this choice.
+#
+# Consequence: do NOT pick S to make the fitted T come out at 1.0. That would
+# define the baseline to be the globally calibrated model, collapsing the
+# "unmodified baseline" and "single global T" comparison points in
+# PREREGISTRATION.md section 9 into the same thing.
+#
+# The fitted T is then a result, not a check: S / T is the sharpness EdAcc
+# actually warrants, and T >> 1 means the training-time scale is too
+# aggressive on these accents.
 LOGIT_SCALE = 30.0
 
 # Dataset
@@ -85,8 +96,28 @@ MIN_UTTERANCE_DURATION_SEC = 1.0  # drop turns under this
 ECE_BINS = 15
 LBFGS_MAX_ITER = 50
 TEMPERATURE_INIT = 1.0
+
+# Bounds on the fitted temperature.
+#
+# For a group the model cannot classify at all, NLL decreases monotonically in
+# T with no finite minimum: the likelihood-optimal recalibration is the uniform
+# distribution (NLL -> ln K), i.e. discard the prediction. Unbounded, the fit
+# returns whatever huge value the optimizer stalls at, which is not an estimate
+# of anything and does not reproduce across machines or torch versions.
+#
+# T_MAX makes that case finite, reproducible and VISIBLE: a group that lands on
+# the bound is reporting degeneracy, not a calibration result, and must be
+# reported as such rather than counted as a successful intervention. T_MIN is
+# the symmetric guard for a group that is systematically underconfident.
+T_MIN = 0.05
+T_MAX = 100.0
 SELECTIVE_ACCURACY_COVERAGE = 0.80
 
 # Decision rule (per prereg)
 WORST_GROUP_ECE_RELATIVE_REDUCTION_TARGET = 0.30  # 30% reduction
 BEST_GROUP_ECE_RELATIVE_INCREASE_LIMIT = 0.20     # max 20% increase
+
+# Confidence intervals: speaker-level (cluster) bootstrap, percentile method.
+# Resampling unit is the speaker, not the utterance (see speaker_bootstrap_ci).
+BOOTSTRAP_N = 2000
+BOOTSTRAP_CI = 0.95
