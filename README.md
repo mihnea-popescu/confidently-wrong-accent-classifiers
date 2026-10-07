@@ -2,7 +2,7 @@
 
 Audit and intervention on the calibration of an off-the-shelf English accent
 classifier across speakers from different first-language (L1) backgrounds,
-using EdAcc as the evaluation set. AIES-style final project.
+using EdAcc as the evaluation set.
 
 ## Status
 
