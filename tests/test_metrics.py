@@ -18,6 +18,7 @@ from src.metrics import (
     top1_accuracy,
     predictive_entropy,
     speaker_bootstrap_ci,
+    accuracy_coverage_curve,
 )
 
 
@@ -137,3 +138,22 @@ def test_speaker_bootstrap_vector_stat_shape():
     )
     assert out.shape == (2, 2)
     assert np.all(out[:, 0] <= out[:, 1])
+
+
+def test_accuracy_coverage_curve_handcomputed():
+    # Ranked by confidence: correct, wrong, correct, wrong.
+    confs = np.array([0.6, 0.9, 0.4, 0.7])
+    correct = np.array([0, 1, 0, 1])
+    c = accuracy_coverage_curve(confs, correct)
+    assert np.allclose(c["coverage"], [0.25, 0.5, 0.75, 1.0])
+    assert np.allclose(c["selective_accuracy"], [1.0, 1.0, 2 / 3, 0.5])
+    assert c["aurc"] == pytest.approx(np.mean([0, 0, 1 / 3, 0.5]))
+
+
+def test_accuracy_coverage_curve_full_coverage_is_accuracy():
+    rng = np.random.default_rng(0)
+    confs, correct = rng.random(200), rng.integers(0, 2, 200)
+    c = accuracy_coverage_curve(confs, correct)
+    assert c["selective_accuracy"][-1] == pytest.approx(correct.mean())
+    assert selective_accuracy_at_coverage(confs, correct, 0.5) == pytest.approx(
+        c["selective_accuracy"][99])

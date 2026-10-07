@@ -159,6 +159,46 @@ def selective_accuracy_at_coverage(
     return float(correctness[keep].mean())
 
 
+def accuracy_coverage_curve(
+    confidences: np.ndarray,
+    correctness: np.ndarray,
+) -> dict:
+    """
+    Max-softmax abstention swept over every threshold: answer the most
+    confident k examples, abstain on the rest, for k = 1..N.
+
+    Returns
+    -------
+    dict with keys:
+        coverage           : (N,) array, k / N
+        selective_accuracy : (N,) array, accuracy on the k answered examples
+        aurc               : float, area under the risk (= 1 - accuracy)
+                             vs coverage curve (Geifman & El-Yaniv 2017).
+                             Lower is better; a confidence that perfectly
+                             ranks correct above incorrect reaches the
+                             minimum for its accuracy, a random one sits at
+                             1 - accuracy.
+
+    Ties in confidence are broken by input order (stable sort), so the curve
+    is deterministic.
+    """
+    confidences = np.asarray(confidences, dtype=float)
+    correctness = np.asarray(correctness, dtype=float)
+    assert confidences.shape == correctness.shape and confidences.ndim == 1
+    n = len(confidences)
+    if n == 0:
+        return {"coverage": np.array([]), "selective_accuracy": np.array([]),
+                "aurc": float("nan")}
+    order = np.argsort(-confidences, kind="stable")
+    k = np.arange(1, n + 1)
+    sel_acc = np.cumsum(correctness[order]) / k
+    return {
+        "coverage": k / n,
+        "selective_accuracy": sel_acc,
+        "aurc": float(np.mean(1.0 - sel_acc)),
+    }
+
+
 def top1_accuracy(probs: np.ndarray, labels: np.ndarray) -> float:
     """Standard top-1 accuracy."""
     probs = np.asarray(probs)

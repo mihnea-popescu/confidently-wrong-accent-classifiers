@@ -1,0 +1,2720 @@
+{
+  "calibration": {
+    "track_a": {
+      "baseline": {
+        "african": {
+          "ece": 0.7775329040520214,
+          "top1_accuracy": 0.007352941176470588,
+          "mean_confidence": 0.784885845228492,
+          "ece_ci": [
+            0.7535205396372766,
+            0.8230031260288784
+          ],
+          "top1_accuracy_ci": [
+            0.0,
+            0.011235955056179775
+          ],
+          "mean_confidence_ci": [
+            0.7647564946934565,
+            0.8230031260288782
+          ],
+          "n_utterances": 136,
+          "n_speakers": 2
+        },
+        "england": {
+          "ece": 0.2612188315365144,
+          "top1_accuracy": 0.645320197044335,
+          "mean_confidence": 0.9065390285808492,
+          "ece_ci": [
+            0.16585119339706195,
+            0.5644135480375518
+          ],
+          "top1_accuracy_ci": [
+            0.3237410071942446,
+            0.7474402730375427
+          ],
+          "mean_confidence_ci": [
+            0.8881545552317964,
+            0.926021109371498
+          ],
+          "n_utterances": 406,
+          "n_speakers": 4
+        },
+        "indian": {
+          "ece": 0.30333803546698973,
+          "top1_accuracy": 0.5528455284552846,
+          "mean_confidence": 0.8561835639222743,
+          "ece_ci": [
+            0.25818549475224095,
+            0.8135617455436499
+          ],
+          "top1_accuracy_ci": [
+            0.0,
+            0.6017699115044248
+          ],
+          "mean_confidence_ci": [
+            0.8135617455436497,
+            0.8599554062566659
+          ],
+          "n_utterances": 123,
+          "n_speakers": 2
+        },
+        "ireland": {
+          "ece": 0.8436177625041177,
+          "top1_accuracy": 0.023923444976076555,
+          "mean_confidence": 0.8642237998028202,
+          "ece_ci": [
+            0.7999414928419168,
+            0.8871542202198595
+          ],
+          "top1_accuracy_ci": [
+            0.0,
+            0.07518796992481203
+          ],
+          "mean_confidence_ci": [
+            0.8526047616653377,
+            0.8871542202198596
+          ],
+          "n_utterances": 418,
+          "n_speakers": 3
+        },
+        "scotland": {
+          "ece": 0.4319421370964604,
+          "top1_accuracy": 0.4305555555555556,
+          "mean_confidence": 0.8546981756020637,
+          "ece_ci": [
+            0.38734694859595553,
+            0.5111496725042921
+          ],
+          "top1_accuracy_ci": [
+            0.3944954128440367,
+            0.4672897196261682
+          ],
+          "mean_confidence_ci": [
+            0.8443815073818949,
+            0.8648255471576423
+          ],
+          "n_utterances": 216,
+          "n_speakers": 2
+        },
+        "us": {
+          "ece": 0.16679743475653763,
+          "top1_accuracy": 0.7342995169082126,
+          "mean_confidence": 0.9010969516647501,
+          "ece_ci": [
+            0.12227792097369639,
+            0.5653801742831757
+          ],
+          "top1_accuracy_ci": [
+            0.125,
+            0.8539325842696629
+          ],
+          "mean_confidence_ci": [
+            0.6903801742831757,
+            0.9632954980021611
+          ],
+          "n_utterances": 207,
+          "n_speakers": 3
+        }
+      },
+      "global_T": {
+        "african": {
+          "ece": 0.1623413421242341,
+          "top1_accuracy": 0.007352941176470588,
+          "mean_confidence": 0.16969428330070468,
+          "ece_ci": [
+            0.15290005023208075,
+            0.18021953315405637
+          ],
+          "top1_accuracy_ci": [
+            0.0,
+            0.011235955056179775
+          ],
+          "mean_confidence_ci": [
+            0.16413600528826056,
+            0.1802195331540564
+          ],
+          "n_utterances": 136,
+          "n_speakers": 2
+        },
+        "england": {
+          "ece": 0.4164828538801565,
+          "top1_accuracy": 0.645320197044335,
+          "mean_confidence": 0.22883734316417853,
+          "ece_ci": [
+            0.11715478031959028,
+            0.5077764616718945
+          ],
+          "top1_accuracy_ci": [
+            0.3237410071942446,
+            0.7474402730375427
+          ],
+          "mean_confidence_ci": [
+            0.21222513702310208,
+            0.2411773486212024
+          ],
+          "n_utterances": 406,
+          "n_speakers": 4
+        },
+        "indian": {
+          "ece": 0.3392021318243694,
+          "top1_accuracy": 0.5528455284552846,
+          "mean_confidence": 0.2136433966309151,
+          "ece_ci": [
+            0.18540639004191722,
+            0.38562766473289034
+          ],
+          "top1_accuracy_ci": [
+            0.0,
+            0.6017699115044248
+          ],
+          "mean_confidence_ci": [
+            0.18540639004191725,
+            0.21614224677153443
+          ],
+          "n_utterances": 123,
+          "n_speakers": 2
+        },
+        "ireland": {
+          "ece": 0.1826679320392534,
+          "top1_accuracy": 0.023923444976076555,
+          "mean_confidence": 0.20659137701532992,
+          "ece_ci": [
+            0.12717742111478378,
+            0.21424541262205307
+          ],
+          "top1_accuracy_ci": [
+            0.0,
+            0.07518796992481203
+          ],
+          "mean_confidence_ci": [
+            0.2023653910395958,
+            0.21424541262205313
+          ],
+          "n_utterances": 418,
+          "n_speakers": 3
+        },
+        "scotland": {
+          "ece": 0.22978927939534163,
+          "top1_accuracy": 0.4305555555555556,
+          "mean_confidence": 0.20851580059378869,
+          "ece_ci": [
+            0.22978927939534163,
+            0.25816141185529123
+          ],
+          "top1_accuracy_ci": [
+            0.3944954128440367,
+            0.4672897196261682
+          ],
+          "mean_confidence_ci": [
+            0.2065923644014312,
+            0.21047518886450797
+          ],
+          "n_utterances": 216,
+          "n_speakers": 2
+        },
+        "us": {
+          "ece": 0.5180557911005761,
+          "top1_accuracy": 0.7342995169082126,
+          "mean_confidence": 0.21624372580763637,
+          "ece_ci": [
+            0.17134172817322277,
+            0.6047552456044023
+          ],
+          "top1_accuracy_ci": [
+            0.125,
+            0.8539325842696629
+          ],
+          "mean_confidence_ci": [
+            0.15885860007585972,
+            0.24917733866526062
+          ],
+          "n_utterances": 207,
+          "n_speakers": 3
+        }
+      },
+      "group_conditional_T": {
+        "african": {
+          "ece": 0.06055721160814639,
+          "top1_accuracy": 0.007352941176470588,
+          "mean_confidence": 0.06791015278461698,
+          "ece_ci": [
+            0.056502097618457724,
+            0.0682360444822377
+          ],
+          "top1_accuracy_ci": [
+            0.0,
+            0.011235955056179775
+          ],
+          "mean_confidence_ci": [
+            0.0677380526746375,
+            0.0682360444822377
+          ],
+          "n_utterances": 136,
+          "n_speakers": 2
+        },
+        "england": {
+          "ece": 0.06121106044379262,
+          "top1_accuracy": 0.645320197044335,
+          "mean_confidence": 0.6099020269200667,
+          "ece_ci": [
+            0.06121106044379255,
+            0.2631903107034317
+          ],
+          "top1_accuracy_ci": [
+            0.3237410071942446,
+            0.7474402730375427
+          ],
+          "mean_confidence_ci": [
+            0.5623034936885145,
+            0.6427851769195423
+          ],
+          "n_utterances": 406,
+          "n_speakers": 4
+        },
+        "indian": {
+          "ece": 0.1874026079474923,
+          "top1_accuracy": 0.5528455284552846,
+          "mean_confidence": 0.4090526221999721,
+          "ece_ci": [
+            0.18740260794749225,
+            0.3358084126704367
+          ],
+          "top1_accuracy_ci": [
+            0.0,
+            0.6017699115044248
+          ],
+          "mean_confidence_ci": [
+            0.3358084126704367,
+            0.4155344106539133
+          ],
+          "n_utterances": 123,
+          "n_speakers": 2
+        },
+        "ireland": {
+          "ece": 0.045151137137044044,
+          "top1_accuracy": 0.023923444976076555,
+          "mean_confidence": 0.0690745821131206,
+          "ece_ci": [
+            0.007214525118304488,
+            0.06928301458832661
+          ],
+          "top1_accuracy_ci": [
+            0.0,
+            0.07518796992481203
+          ],
+          "mean_confidence_ci": [
+            0.06883467608922508,
+            0.06928301458832661
+          ],
+          "n_utterances": 418,
+          "n_speakers": 3
+        },
+        "scotland": {
+          "ece": 0.23308906472820218,
+          "top1_accuracy": 0.4305555555555556,
+          "mean_confidence": 0.21474108581559434,
+          "ece_ci": [
+            0.23308906472820212,
+            0.26527775068165693
+          ],
+          "top1_accuracy_ci": [
+            0.3944954128440367,
+            0.4672897196261682
+          ],
+          "mean_confidence_ci": [
+            0.2126948002100372,
+            0.21682561975022735
+          ],
+          "n_utterances": 216,
+          "n_speakers": 2
+        },
+        "us": {
+          "ece": 0.17587902384920717,
+          "top1_accuracy": 0.7342995169082126,
+          "mean_confidence": 0.5584204930590054,
+          "ece_ci": [
+            0.15959416548256078,
+            0.3396378033142045
+          ],
+          "top1_accuracy_ci": [
+            0.125,
+            0.8539325842696629
+          ],
+          "mean_confidence_ci": [
+            0.3675168031573399,
+            0.6580155558000568
+          ],
+          "n_utterances": 207,
+          "n_speakers": 3
+        }
+      },
+      "isotonic_pooled": {
+        "african": {
+          "ece": 0.1672171169175752,
+          "top1_accuracy": 0.007352941176470588,
+          "mean_confidence": 0.17457005809404577,
+          "ece_ci": [
+            0.16077814026195655,
+            0.17941007271225734
+          ],
+          "top1_accuracy_ci": [
+            0.0,
+            0.011235955056179775
+          ],
+          "mean_confidence_ci": [
+            0.17201409531813636,
+            0.1794100727122573
+          ],
+          "n_utterances": 136,
+          "n_speakers": 2
+        },
+        "england": {
+          "ece": 0.3826673528926854,
+          "top1_accuracy": 0.645320197044335,
+          "mean_confidence": 0.26601472701467693,
+          "ece_ci": [
+            0.12936134284120138,
+            0.4757509487102849
+          ],
+          "top1_accuracy_ci": [
+            0.3237410071942446,
+            0.7474402730375427
+          ],
+          "mean_confidence_ci": [
+            0.23505290870199805,
+            0.287205033118095
+          ],
+          "n_utterances": 406,
+          "n_speakers": 4
+        },
+        "indian": {
+          "ece": 0.3260977003136594,
+          "top1_accuracy": 0.5528455284552846,
+          "mean_confidence": 0.23304864114975518,
+          "ece_ci": [
+            0.15937133704187545,
+            0.3690595620265386
+          ],
+          "top1_accuracy_ci": [
+            0.0,
+            0.6017699115044248
+          ],
+          "mean_confidence_ci": [
+            0.1593713370418754,
+            0.23956875655753215
+          ],
+          "n_utterances": 123,
+          "n_speakers": 2
+        },
+        "ireland": {
+          "ece": 0.1900525591296799,
+          "top1_accuracy": 0.023923444976076555,
+          "mean_confidence": 0.20949035817274209,
+          "ece_ci": [
+            0.15940832528061397,
+            0.22839680163657086
+          ],
+          "top1_accuracy_ci": [
+            0.0,
+            0.07518796992481203
+          ],
+          "mean_confidence_ci": [
+            0.19438479771311665,
+            0.22839680163657086
+          ],
+          "n_utterances": 418,
+          "n_speakers": 3
+        },
+        "scotland": {
+          "ece": 0.2968660498981511,
+          "top1_accuracy": 0.4305555555555556,
+          "mean_confidence": 0.19666821401440882,
+          "ece_ci": [
+            0.2968660498981511,
+            0.3263128160679558
+          ],
+          "top1_accuracy_ci": [
+            0.3944954128440367,
+            0.4672897196261682
+          ],
+          "mean_confidence_ci": [
+            0.19530199751653132,
+            0.19800936231966468
+          ],
+          "n_utterances": 216,
+          "n_speakers": 2
+        },
+        "us": {
+          "ece": 0.48410638707423626,
+          "top1_accuracy": 0.7342995169082126,
+          "mean_confidence": 0.25079699456827576,
+          "ece_ci": [
+            0.23044738393694927,
+            0.5518684706965026
+          ],
+          "top1_accuracy_ci": [
+            0.125,
+            0.8539325842696629
+          ],
+          "mean_confidence_ci": [
+            0.182180057204276,
+            0.3034686079551828
+          ],
+          "n_utterances": 207,
+          "n_speakers": 3
+        }
+      },
+      "isotonic_group": {
+        "african": {
+          "ece": 0.016411540417380223,
+          "top1_accuracy": 0.007352941176470588,
+          "mean_confidence": 0.023764481593850813,
+          "ece_ci": [
+            0.012615908087171567,
+            0.02359901440437109
+          ],
+          "top1_accuracy_ci": [
+            0.0,
+            0.011235955056179775
+          ],
+          "mean_confidence_ci": [
+            0.02359901440437109,
+            0.023851863143351342
+          ],
+          "n_utterances": 136,
+          "n_speakers": 2
+        },
+        "england": {
+          "ece": 0.12657448326965573,
+          "top1_accuracy": 0.645320197044335,
+          "mean_confidence": 0.5409132014594084,
+          "ece_ci": [
+            0.07605600465620341,
+            0.2033416618832231
+          ],
+          "top1_accuracy_ci": [
+            0.3237410071942446,
+            0.7474402730375427
+          ],
+          "mean_confidence_ci": [
+            0.4918812046709234,
+            0.5743481715345357
+          ],
+          "n_utterances": 406,
+          "n_speakers": 4
+        },
+        "indian": {
+          "ece": 0.17060225771298254,
+          "top1_accuracy": 0.5528455284552846,
+          "mean_confidence": 0.382243270742302,
+          "ece_ci": [
+            0.17060225771298254,
+            0.26802876575122336
+          ],
+          "top1_accuracy_ci": [
+            0.0,
+            0.6017699115044248
+          ],
+          "mean_confidence_ci": [
+            0.26802876575122336,
+            0.3923507490600966
+          ],
+          "n_utterances": 123,
+          "n_speakers": 2
+        },
+        "ireland": {
+          "ece": 0.010908260594297815,
+          "top1_accuracy": 0.023923444976076555,
+          "mean_confidence": 0.01301518438177874,
+          "ece_ci": [
+            0.0064022913463765985,
+            0.062172785543033286
+          ],
+          "top1_accuracy_ci": [
+            0.0,
+            0.07518796992481203
+          ],
+          "mean_confidence_ci": [
+            0.01301518438177874,
+            0.013015184381778743
+          ],
+          "n_utterances": 418,
+          "n_speakers": 3
+        },
+        "scotland": {
+          "ece": 0.39949223416965357,
+          "top1_accuracy": 0.4305555555555556,
+          "mean_confidence": 0.03106332138590202,
+          "ece_ci": [
+            0.3631251849659663,
+            0.4365390413023817
+          ],
+          "top1_accuracy_ci": [
+            0.3944954128440367,
+            0.4672897196261682
+          ],
+          "mean_confidence_ci": [
+            0.030750678323786543,
+            0.03137022787807042
+          ],
+          "n_utterances": 216,
+          "n_speakers": 2
+        },
+        "us": {
+          "ece": 0.18067571782009104,
+          "top1_accuracy": 0.7342995169082126,
+          "mean_confidence": 0.554367017222644,
+          "ece_ci": [
+            0.15739938726868374,
+            0.33454931399010346
+          ],
+          "top1_accuracy_ci": [
+            0.125,
+            0.8539325842696629
+          ],
+          "mean_confidence_ci": [
+            0.36579931399010346,
+            0.6355515677396658
+          ],
+          "n_utterances": 207,
+          "n_speakers": 3
+        }
+      }
+    },
+    "track_b": {
+      "baseline": {
+        "Bulgarian": {
+          "mean_confidence": 0.8263122234649968,
+          "mean_confidence_ci": [
+            0.7987384105901626,
+            0.8289046332224599
+          ],
+          "n_utterances": 128,
+          "n_speakers": 2
+        },
+        "Catalan": {
+          "mean_confidence": 0.8817774367254855,
+          "mean_confidence_ci": [
+            0.8785088127217637,
+            0.8924307297746529
+          ],
+          "n_utterances": 230,
+          "n_speakers": 2
+        },
+        "Italian": {
+          "mean_confidence": 0.8573814036148731,
+          "mean_confidence_ci": [
+            0.8419574479908565,
+            0.8697205681140865
+          ],
+          "n_utterances": 126,
+          "n_speakers": 2
+        },
+        "Mandarin": {
+          "mean_confidence": 0.8382086643905097,
+          "mean_confidence_ci": [
+            0.831471973496131,
+            0.8440190602869112
+          ],
+          "n_utterances": 298,
+          "n_speakers": 2
+        },
+        "OOV-aggregate": {
+          "mean_confidence": 0.8679432398766793,
+          "mean_confidence_ci": [
+            0.8357391960039184,
+            0.9043984321976891
+          ],
+          "n_utterances": 1819,
+          "n_speakers": 16
+        },
+        "Spanish": {
+          "mean_confidence": 0.8516692540331802,
+          "mean_confidence_ci": [
+            0.8162694277315399,
+            0.8880810393697595
+          ],
+          "n_utterances": 495,
+          "n_speakers": 4
+        },
+        "Vietnamese": {
+          "mean_confidence": 0.8801973579930898,
+          "mean_confidence_ci": [
+            0.8503817136057732,
+            0.9015903177868275
+          ],
+          "n_utterances": 381,
+          "n_speakers": 5
+        }
+      },
+      "global_T": {
+        "Bulgarian": {
+          "mean_confidence": 0.17902127105892013,
+          "mean_confidence_ci": [
+            0.17767506819871628,
+            0.1933399742083611
+          ],
+          "n_utterances": 128,
+          "n_speakers": 2
+        },
+        "Catalan": {
+          "mean_confidence": 0.19566248726854316,
+          "mean_confidence_ci": [
+            0.18814944216458984,
+            0.2201494490888355
+          ],
+          "n_utterances": 230,
+          "n_speakers": 2
+        },
+        "Italian": {
+          "mean_confidence": 0.18626722606396034,
+          "mean_confidence_ci": [
+            0.17034368638435157,
+            0.19900605780764735
+          ],
+          "n_utterances": 126,
+          "n_speakers": 2
+        },
+        "Mandarin": {
+          "mean_confidence": 0.1767649641794539,
+          "mean_confidence_ci": [
+            0.1758654475672666,
+            0.17780788199068548
+          ],
+          "n_utterances": 298,
+          "n_speakers": 2
+        },
+        "OOV-aggregate": {
+          "mean_confidence": 0.19510056986446533,
+          "mean_confidence_ci": [
+            0.1789135041989482,
+            0.21267710184155417
+          ],
+          "n_utterances": 1819,
+          "n_speakers": 16
+        },
+        "Spanish": {
+          "mean_confidence": 0.19960118444553732,
+          "mean_confidence_ci": [
+            0.19215986161596782,
+            0.20927984206767583
+          ],
+          "n_utterances": 495,
+          "n_speakers": 4
+        },
+        "Vietnamese": {
+          "mean_confidence": 0.19722890176753355,
+          "mean_confidence_ci": [
+            0.18162655501346006,
+            0.20969921944433642
+          ],
+          "n_utterances": 381,
+          "n_speakers": 5
+        }
+      },
+      "group_conditional_T": {
+        "Bulgarian": {
+          "mean_confidence": 0.17902127105892013,
+          "mean_confidence_ci": [
+            0.17767506819871628,
+            0.1933399742083611
+          ],
+          "n_utterances": 128,
+          "n_speakers": 2
+        },
+        "Catalan": {
+          "mean_confidence": 0.19566248726854316,
+          "mean_confidence_ci": [
+            0.18814944216458984,
+            0.2201494490888355
+          ],
+          "n_utterances": 230,
+          "n_speakers": 2
+        },
+        "Italian": {
+          "mean_confidence": 0.18626722606396034,
+          "mean_confidence_ci": [
+            0.17034368638435157,
+            0.19900605780764735
+          ],
+          "n_utterances": 126,
+          "n_speakers": 2
+        },
+        "Mandarin": {
+          "mean_confidence": 0.1767649641794539,
+          "mean_confidence_ci": [
+            0.1758654475672666,
+            0.17780788199068548
+          ],
+          "n_utterances": 298,
+          "n_speakers": 2
+        },
+        "OOV-aggregate": {
+          "mean_confidence": 0.19510056986446533,
+          "mean_confidence_ci": [
+            0.1789135041989482,
+            0.21267710184155417
+          ],
+          "n_utterances": 1819,
+          "n_speakers": 16
+        },
+        "Spanish": {
+          "mean_confidence": 0.19960118444553732,
+          "mean_confidence_ci": [
+            0.19215986161596782,
+            0.20927984206767583
+          ],
+          "n_utterances": 495,
+          "n_speakers": 4
+        },
+        "Vietnamese": {
+          "mean_confidence": 0.19722890176753355,
+          "mean_confidence_ci": [
+            0.18162655501346006,
+            0.20969921944433642
+          ],
+          "n_utterances": 381,
+          "n_speakers": 5
+        }
+      },
+      "isotonic_pooled": {
+        "Bulgarian": {
+          "mean_confidence": 0.20227413425435678,
+          "mean_confidence_ci": [
+            0.15214383977483564,
+            0.2069872388635425
+          ],
+          "n_utterances": 128,
+          "n_speakers": 2
+        },
+        "Catalan": {
+          "mean_confidence": 0.19683675099722728,
+          "mean_confidence_ci": [
+            0.19509317059405407,
+            0.20251953157053246
+          ],
+          "n_utterances": 230,
+          "n_speakers": 2
+        },
+        "Italian": {
+          "mean_confidence": 0.2038597286691743,
+          "mean_confidence_ci": [
+            0.17708659494431983,
+            0.22527823564905788
+          ],
+          "n_utterances": 126,
+          "n_speakers": 2
+        },
+        "Mandarin": {
+          "mean_confidence": 0.19183442812323132,
+          "mean_confidence_ci": [
+            0.1871031343595774,
+            0.19731998611007642
+          ],
+          "n_utterances": 298,
+          "n_speakers": 2
+        },
+        "OOV-aggregate": {
+          "mean_confidence": 0.2179191971746114,
+          "mean_confidence_ci": [
+            0.18754315805286298,
+            0.2522527858256442
+          ],
+          "n_utterances": 1819,
+          "n_speakers": 16
+        },
+        "Spanish": {
+          "mean_confidence": 0.2009014437924735,
+          "mean_confidence_ci": [
+            0.18199653699595664,
+            0.221940961632109
+          ],
+          "n_utterances": 495,
+          "n_speakers": 4
+        },
+        "Vietnamese": {
+          "mean_confidence": 0.2080389693800169,
+          "mean_confidence_ci": [
+            0.18679289082092518,
+            0.2231598839247872
+          ],
+          "n_utterances": 381,
+          "n_speakers": 5
+        }
+      },
+      "isotonic_group": {
+        "Bulgarian": {
+          "mean_confidence": 0.20227413425435678,
+          "mean_confidence_ci": [
+            0.15214383977483564,
+            0.2069872388635425
+          ],
+          "n_utterances": 128,
+          "n_speakers": 2
+        },
+        "Catalan": {
+          "mean_confidence": 0.19683675099722728,
+          "mean_confidence_ci": [
+            0.19509317059405407,
+            0.20251953157053246
+          ],
+          "n_utterances": 230,
+          "n_speakers": 2
+        },
+        "Italian": {
+          "mean_confidence": 0.2038597286691743,
+          "mean_confidence_ci": [
+            0.17708659494431983,
+            0.22527823564905788
+          ],
+          "n_utterances": 126,
+          "n_speakers": 2
+        },
+        "Mandarin": {
+          "mean_confidence": 0.19183442812323132,
+          "mean_confidence_ci": [
+            0.1871031343595774,
+            0.19731998611007642
+          ],
+          "n_utterances": 298,
+          "n_speakers": 2
+        },
+        "OOV-aggregate": {
+          "mean_confidence": 0.2179191971746114,
+          "mean_confidence_ci": [
+            0.18754315805286298,
+            0.2522527858256442
+          ],
+          "n_utterances": 1819,
+          "n_speakers": 16
+        },
+        "Spanish": {
+          "mean_confidence": 0.2009014437924735,
+          "mean_confidence_ci": [
+            0.18199653699595664,
+            0.221940961632109
+          ],
+          "n_utterances": 495,
+          "n_speakers": 4
+        },
+        "Vietnamese": {
+          "mean_confidence": 0.2080389693800169,
+          "mean_confidence_ci": [
+            0.18679289082092518,
+            0.2231598839247872
+          ],
+          "n_utterances": 381,
+          "n_speakers": 5
+        }
+      }
+    }
+  },
+  "decision_rule": {
+    "global_T_vs_baseline": {
+      "baseline_worst_group": "ireland",
+      "baseline_worst_ece": 0.8436177625041177,
+      "intervention_ece_for_baseline_worst_group": 0.1826679320392534,
+      "worst_group_relative_reduction": 0.7834707373905467,
+      "criterion_1_met (>=30% reduction)": true,
+      "baseline_best_group": "us",
+      "baseline_best_ece": 0.16679743475653763,
+      "intervention_ece_for_baseline_best_group": 0.5180557911005761,
+      "best_group_relative_increase": 2.1058978326420026,
+      "criterion_2_met (<=20% increase)": false,
+      "verdict": "partial"
+    },
+    "group_conditional_T_vs_baseline": {
+      "baseline_worst_group": "ireland",
+      "baseline_worst_ece": 0.8436177625041177,
+      "intervention_ece_for_baseline_worst_group": 0.045151137137044044,
+      "worst_group_relative_reduction": 0.9464791530668801,
+      "criterion_1_met (>=30% reduction)": true,
+      "baseline_best_group": "us",
+      "baseline_best_ece": 0.16679743475653763,
+      "intervention_ece_for_baseline_best_group": 0.17587902384920717,
+      "best_group_relative_increase": 0.054446815119940484,
+      "criterion_2_met (<=20% increase)": true,
+      "verdict": "successful"
+    },
+    "isotonic_pooled_vs_baseline": {
+      "baseline_worst_group": "ireland",
+      "baseline_worst_ece": 0.8436177625041177,
+      "intervention_ece_for_baseline_worst_group": 0.1900525591296799,
+      "worst_group_relative_reduction": 0.7747172148609753,
+      "criterion_1_met (>=30% reduction)": true,
+      "baseline_best_group": "us",
+      "baseline_best_ece": 0.16679743475653763,
+      "intervention_ece_for_baseline_best_group": 0.48410638707423626,
+      "best_group_relative_increase": 1.902361105138409,
+      "criterion_2_met (<=20% increase)": false,
+      "verdict": "partial"
+    },
+    "isotonic_group_vs_baseline": {
+      "baseline_worst_group": "ireland",
+      "baseline_worst_ece": 0.8436177625041177,
+      "intervention_ece_for_baseline_worst_group": 0.010908260594297815,
+      "worst_group_relative_reduction": 0.9870696646287784,
+      "criterion_1_met (>=30% reduction)": true,
+      "baseline_best_group": "us",
+      "baseline_best_ece": 0.16679743475653763,
+      "intervention_ece_for_baseline_best_group": 0.18067571782009104,
+      "best_group_relative_increase": 0.08320441548642848,
+      "criterion_2_met (<=20% increase)": true,
+      "verdict": "successful"
+    }
+  },
+  "abstention": {
+    "track_a": {
+      "baseline": {
+        "african": {
+          "coverage": 0.7058823529411765,
+          "selective_accuracy": 0.010416666666666666,
+          "answered_wrong_rate": 0.6985294117647058,
+          "coverage_ci": [
+            0.6741573033707865,
+            0.7659574468085106
+          ],
+          "selective_accuracy_ci": [
+            0.0,
+            0.016666666666666666
+          ],
+          "answered_wrong_rate_ci": [
+            0.6629213483146067,
+            0.7659574468085106
+          ],
+          "n_utterances": 136,
+          "n_speakers": 2
+        },
+        "england": {
+          "coverage": 0.8842364532019704,
+          "selective_accuracy": 0.6852367688022284,
+          "answered_wrong_rate": 0.27832512315270935,
+          "coverage_ci": [
+            0.8656126482213439,
+            0.9150326797385621
+          ],
+          "selective_accuracy_ci": [
+            0.3346938775510204,
+            0.7968197879858657
+          ],
+          "answered_wrong_rate_ci": [
+            0.1777434312210201,
+            0.5863309352517986
+          ],
+          "n_utterances": 406,
+          "n_speakers": 4
+        },
+        "indian": {
+          "coverage": 0.7967479674796748,
+          "selective_accuracy": 0.6224489795918368,
+          "answered_wrong_rate": 0.3008130081300813,
+          "coverage_ci": [
+            0.7964601769911505,
+            0.8
+          ],
+          "selective_accuracy_ci": [
+            0.0,
+            0.6777777777777778
+          ],
+          "answered_wrong_rate_ci": [
+            0.25663716814159293,
+            0.8
+          ],
+          "n_utterances": 123,
+          "n_speakers": 2
+        },
+        "ireland": {
+          "coverage": 0.8229665071770335,
+          "selective_accuracy": 0.020348837209302327,
+          "answered_wrong_rate": 0.80622009569378,
+          "coverage_ci": [
+            0.8115183246073299,
+            0.8404255319148937
+          ],
+          "selective_accuracy_ci": [
+            0.0,
+            0.06363636363636363
+          ],
+          "answered_wrong_rate_ci": [
+            0.7744360902255639,
+            0.8404255319148937
+          ],
+          "n_utterances": 418,
+          "n_speakers": 3
+        },
+        "scotland": {
+          "coverage": 0.8055555555555556,
+          "selective_accuracy": 0.41379310344827586,
+          "answered_wrong_rate": 0.4722222222222222,
+          "coverage_ci": [
+            0.794392523364486,
+            0.8165137614678899
+          ],
+          "selective_accuracy_ci": [
+            0.3595505617977528,
+            0.47058823529411764
+          ],
+          "answered_wrong_rate_ci": [
+            0.4205607476635514,
+            0.5229357798165137
+          ],
+          "n_utterances": 216,
+          "n_speakers": 2
+        },
+        "us": {
+          "coverage": 0.8792270531400966,
+          "selective_accuracy": 0.7912087912087912,
+          "answered_wrong_rate": 0.18357487922705315,
+          "coverage_ci": [
+            0.5,
+            0.9775280898876404
+          ],
+          "selective_accuracy_ci": [
+            0.25,
+            0.8735632183908046
+          ],
+          "answered_wrong_rate_ci": [
+            0.12359550561797752,
+            0.375
+          ],
+          "n_utterances": 207,
+          "n_speakers": 3
+        }
+      },
+      "global_T": {
+        "african": {
+          "coverage": 0.7205882352941176,
+          "selective_accuracy": 0.01020408163265306,
+          "answered_wrong_rate": 0.7132352941176471,
+          "coverage_ci": [
+            0.6629213483146067,
+            0.8297872340425532
+          ],
+          "selective_accuracy_ci": [
+            0.0,
+            0.01694915254237288
+          ],
+          "answered_wrong_rate_ci": [
+            0.651685393258427,
+            0.8297872340425532
+          ],
+          "n_utterances": 136,
+          "n_speakers": 2
+        },
+        "england": {
+          "coverage": 0.9261083743842364,
+          "selective_accuracy": 0.6781914893617021,
+          "answered_wrong_rate": 0.29802955665024633,
+          "coverage_ci": [
+            0.9130434782608695,
+            0.9490909090909091
+          ],
+          "selective_accuracy_ci": [
+            0.32945736434108525,
+            0.7899159663865546
+          ],
+          "answered_wrong_rate_ci": [
+            0.19319938176197837,
+            0.6223021582733813
+          ],
+          "n_utterances": 406,
+          "n_speakers": 4
+        },
+        "indian": {
+          "coverage": 0.7886178861788617,
+          "selective_accuracy": 0.6597938144329897,
+          "answered_wrong_rate": 0.2682926829268293,
+          "coverage_ci": [
+            0.7787610619469026,
+            0.9
+          ],
+          "selective_accuracy_ci": [
+            0.0,
+            0.7272727272727273
+          ],
+          "answered_wrong_rate_ci": [
+            0.21238938053097345,
+            0.9
+          ],
+          "n_utterances": 123,
+          "n_speakers": 2
+        },
+        "ireland": {
+          "coverage": 0.9043062200956937,
+          "selective_accuracy": 0.018518518518518517,
+          "answered_wrong_rate": 0.8875598086124402,
+          "coverage_ci": [
+            0.7969924812030075,
+            0.9581151832460733
+          ],
+          "selective_accuracy_ci": [
+            0.0,
+            0.0660377358490566
+          ],
+          "answered_wrong_rate_ci": [
+            0.7443609022556391,
+            0.9581151832460733
+          ],
+          "n_utterances": 418,
+          "n_speakers": 3
+        },
+        "scotland": {
+          "coverage": 0.9490740740740741,
+          "selective_accuracy": 0.43902439024390244,
+          "answered_wrong_rate": 0.5324074074074074,
+          "coverage_ci": [
+            0.9345794392523364,
+            0.963302752293578
+          ],
+          "selective_accuracy_ci": [
+            0.4,
+            0.48
+          ],
+          "answered_wrong_rate_ci": [
+            0.48598130841121495,
+            0.5779816513761468
+          ],
+          "n_utterances": 216,
+          "n_speakers": 2
+        },
+        "us": {
+          "coverage": 0.855072463768116,
+          "selective_accuracy": 0.7909604519774012,
+          "answered_wrong_rate": 0.178743961352657,
+          "coverage_ci": [
+            0.5,
+            0.9438202247191011
+          ],
+          "selective_accuracy_ci": [
+            0.25,
+            0.8809523809523809
+          ],
+          "answered_wrong_rate_ci": [
+            0.11235955056179775,
+            0.375
+          ],
+          "n_utterances": 207,
+          "n_speakers": 3
+        }
+      },
+      "group_conditional_T": {
+        "african": {
+          "coverage": 0.4852941176470588,
+          "selective_accuracy": 0.0,
+          "answered_wrong_rate": 0.4852941176470588,
+          "coverage_ci": [
+            0.4044943820224719,
+            0.6382978723404256
+          ],
+          "selective_accuracy_ci": [
+            0.0,
+            0.0
+          ],
+          "answered_wrong_rate_ci": [
+            0.4044943820224719,
+            0.6382978723404256
+          ],
+          "n_utterances": 136,
+          "n_speakers": 2
+        },
+        "england": {
+          "coverage": 1.0,
+          "selective_accuracy": 0.645320197044335,
+          "answered_wrong_rate": 0.35467980295566504,
+          "coverage_ci": [
+            1.0,
+            1.0
+          ],
+          "selective_accuracy_ci": [
+            0.3237410071942446,
+            0.7474402730375427
+          ],
+          "answered_wrong_rate_ci": [
+            0.2525597269624573,
+            0.6762589928057554
+          ],
+          "n_utterances": 406,
+          "n_speakers": 4
+        },
+        "indian": {
+          "coverage": 1.0,
+          "selective_accuracy": 0.5528455284552846,
+          "answered_wrong_rate": 0.44715447154471544,
+          "coverage_ci": [
+            1.0,
+            1.0
+          ],
+          "selective_accuracy_ci": [
+            0.0,
+            0.6017699115044248
+          ],
+          "answered_wrong_rate_ci": [
+            0.39823008849557523,
+            1.0
+          ],
+          "n_utterances": 123,
+          "n_speakers": 2
+        },
+        "ireland": {
+          "coverage": 0.8229665071770335,
+          "selective_accuracy": 0.020348837209302327,
+          "answered_wrong_rate": 0.80622009569378,
+          "coverage_ci": [
+            0.7218045112781954,
+            0.8900523560209425
+          ],
+          "selective_accuracy_ci": [
+            0.0,
+            0.07291666666666667
+          ],
+          "answered_wrong_rate_ci": [
+            0.6691729323308271,
+            0.8900523560209425
+          ],
+          "n_utterances": 418,
+          "n_speakers": 3
+        },
+        "scotland": {
+          "coverage": 1.0,
+          "selective_accuracy": 0.4305555555555556,
+          "answered_wrong_rate": 0.5694444444444444,
+          "coverage_ci": [
+            1.0,
+            1.0
+          ],
+          "selective_accuracy_ci": [
+            0.3944954128440367,
+            0.4672897196261682
+          ],
+          "answered_wrong_rate_ci": [
+            0.5327102803738317,
+            0.6055045871559633
+          ],
+          "n_utterances": 216,
+          "n_speakers": 2
+        },
+        "us": {
+          "coverage": 1.0,
+          "selective_accuracy": 0.7342995169082126,
+          "answered_wrong_rate": 0.26570048309178745,
+          "coverage_ci": [
+            1.0,
+            1.0
+          ],
+          "selective_accuracy_ci": [
+            0.125,
+            0.8539325842696629
+          ],
+          "answered_wrong_rate_ci": [
+            0.14606741573033707,
+            0.875
+          ],
+          "n_utterances": 207,
+          "n_speakers": 3
+        }
+      },
+      "isotonic_pooled": {
+        "african": {
+          "coverage": 0.9117647058823529,
+          "selective_accuracy": 0.008064516129032258,
+          "answered_wrong_rate": 0.9044117647058824,
+          "coverage_ci": [
+            0.898876404494382,
+            0.9361702127659575
+          ],
+          "selective_accuracy_ci": [
+            0.0,
+            0.0125
+          ],
+          "answered_wrong_rate_ci": [
+            0.8876404494382022,
+            0.9361702127659575
+          ],
+          "n_utterances": 136,
+          "n_speakers": 2
+        },
+        "england": {
+          "coverage": 0.9729064039408867,
+          "selective_accuracy": 0.660759493670886,
+          "answered_wrong_rate": 0.33004926108374383,
+          "coverage_ci": [
+            0.9683794466403162,
+            0.9818181818181818
+          ],
+          "selective_accuracy_ci": [
+            0.3333333333333333,
+            0.7609561752988048
+          ],
+          "answered_wrong_rate_ci": [
+            0.23183925811437403,
+            0.6474820143884892
+          ],
+          "n_utterances": 406,
+          "n_speakers": 4
+        },
+        "indian": {
+          "coverage": 0.959349593495935,
+          "selective_accuracy": 0.576271186440678,
+          "answered_wrong_rate": 0.4065040650406504,
+          "coverage_ci": [
+            0.9557522123893806,
+            1.0
+          ],
+          "selective_accuracy_ci": [
+            0.0,
+            0.6296296296296297
+          ],
+          "answered_wrong_rate_ci": [
+            0.35398230088495575,
+            1.0
+          ],
+          "n_utterances": 123,
+          "n_speakers": 2
+        },
+        "ireland": {
+          "coverage": 0.9593301435406698,
+          "selective_accuracy": 0.0199501246882793,
+          "answered_wrong_rate": 0.9401913875598086,
+          "coverage_ci": [
+            0.924812030075188,
+            0.9787234042553191
+          ],
+          "selective_accuracy_ci": [
+            0.0,
+            0.06504065040650407
+          ],
+          "answered_wrong_rate_ci": [
+            0.8646616541353384,
+            0.9787234042553191
+          ],
+          "n_utterances": 418,
+          "n_speakers": 3
+        },
+        "scotland": {
+          "coverage": 0.9814814814814815,
+          "selective_accuracy": 0.42924528301886794,
+          "answered_wrong_rate": 0.5601851851851852,
+          "coverage_ci": [
+            0.9813084112149533,
+            0.981651376146789
+          ],
+          "selective_accuracy_ci": [
+            0.3925233644859813,
+            0.4666666666666667
+          ],
+          "answered_wrong_rate_ci": [
+            0.5233644859813084,
+            0.5963302752293578
+          ],
+          "n_utterances": 216,
+          "n_speakers": 2
+        },
+        "us": {
+          "coverage": 0.966183574879227,
+          "selective_accuracy": 0.755,
+          "answered_wrong_rate": 0.23671497584541062,
+          "coverage_ci": [
+            0.75,
+            0.9887640449438202
+          ],
+          "selective_accuracy_ci": [
+            0.16666666666666666,
+            0.8636363636363636
+          ],
+          "answered_wrong_rate_ci": [
+            0.1348314606741573,
+            0.625
+          ],
+          "n_utterances": 207,
+          "n_speakers": 3
+        }
+      },
+      "isotonic_group": {
+        "african": {
+          "coverage": 0.9632352941176471,
+          "selective_accuracy": 0.007633587786259542,
+          "answered_wrong_rate": 0.9558823529411765,
+          "coverage_ci": [
+            0.9574468085106383,
+            0.9662921348314607
+          ],
+          "selective_accuracy_ci": [
+            0.0,
+            0.011627906976744186
+          ],
+          "answered_wrong_rate_ci": [
+            0.9550561797752809,
+            0.9574468085106383
+          ],
+          "n_utterances": 136,
+          "n_speakers": 2
+        },
+        "england": {
+          "coverage": 0.9950738916256158,
+          "selective_accuracy": 0.6485148514851485,
+          "answered_wrong_rate": 0.3497536945812808,
+          "coverage_ci": [
+            0.9905956112852664,
+            1.0
+          ],
+          "selective_accuracy_ci": [
+            0.3249097472924188,
+            0.75
+          ],
+          "answered_wrong_rate_ci": [
+            0.24914675767918087,
+            0.6726618705035972
+          ],
+          "n_utterances": 406,
+          "n_speakers": 4
+        },
+        "indian": {
+          "coverage": 1.0,
+          "selective_accuracy": 0.5528455284552846,
+          "answered_wrong_rate": 0.44715447154471544,
+          "coverage_ci": [
+            1.0,
+            1.0
+          ],
+          "selective_accuracy_ci": [
+            0.0,
+            0.6017699115044248
+          ],
+          "answered_wrong_rate_ci": [
+            0.39823008849557523,
+            1.0
+          ],
+          "n_utterances": 123,
+          "n_speakers": 2
+        },
+        "ireland": {
+          "coverage": 0.0,
+          "selective_accuracy": NaN,
+          "answered_wrong_rate": 0.0,
+          "coverage_ci": [
+            0.0,
+            0.0
+          ],
+          "selective_accuracy_ci": [
+            NaN,
+            NaN
+          ],
+          "answered_wrong_rate_ci": [
+            0.0,
+            0.0
+          ],
+          "n_utterances": 418,
+          "n_speakers": 3
+        },
+        "scotland": {
+          "coverage": 0.9629629629629629,
+          "selective_accuracy": 0.4326923076923077,
+          "answered_wrong_rate": 0.5462962962962963,
+          "coverage_ci": [
+            0.9532710280373832,
+            0.9724770642201835
+          ],
+          "selective_accuracy_ci": [
+            0.39622641509433965,
+            0.47058823529411764
+          ],
+          "answered_wrong_rate_ci": [
+            0.5046728971962616,
+            0.5871559633027523
+          ],
+          "n_utterances": 216,
+          "n_speakers": 2
+        },
+        "us": {
+          "coverage": 0.966183574879227,
+          "selective_accuracy": 0.755,
+          "answered_wrong_rate": 0.23671497584541062,
+          "coverage_ci": [
+            0.75,
+            0.9887640449438202
+          ],
+          "selective_accuracy_ci": [
+            0.16666666666666666,
+            0.8636363636363636
+          ],
+          "answered_wrong_rate_ci": [
+            0.1348314606741573,
+            0.625
+          ],
+          "n_utterances": 207,
+          "n_speakers": 3
+        }
+      }
+    },
+    "track_b": {
+      "baseline": {
+        "Bulgarian": {
+          "coverage": 0.7421875,
+          "coverage_ci": [
+            0.7350427350427351,
+            0.8181818181818182
+          ],
+          "n_utterances": 128,
+          "n_speakers": 2
+        },
+        "Catalan": {
+          "coverage": 0.8434782608695652,
+          "coverage_ci": [
+            0.8333333333333334,
+            0.8465909090909091
+          ],
+          "n_utterances": 230,
+          "n_speakers": 2
+        },
+        "Italian": {
+          "coverage": 0.8253968253968254,
+          "coverage_ci": [
+            0.8035714285714286,
+            0.8428571428571429
+          ],
+          "n_utterances": 126,
+          "n_speakers": 2
+        },
+        "Mandarin": {
+          "coverage": 0.7953020134228188,
+          "coverage_ci": [
+            0.7681159420289855,
+            0.81875
+          ],
+          "n_utterances": 298,
+          "n_speakers": 2
+        },
+        "OOV-aggregate": {
+          "coverage": 0.8306761957119296,
+          "coverage_ci": [
+            0.7892779474232703,
+            0.8786390714831037
+          ],
+          "n_utterances": 1819,
+          "n_speakers": 16
+        },
+        "Spanish": {
+          "coverage": 0.8101010101010101,
+          "coverage_ci": [
+            0.75177304964539,
+            0.869198312236287
+          ],
+          "n_utterances": 495,
+          "n_speakers": 4
+        },
+        "Vietnamese": {
+          "coverage": 0.8818897637795275,
+          "coverage_ci": [
+            0.8287671232876712,
+            0.9234828496042217
+          ],
+          "n_utterances": 381,
+          "n_speakers": 5
+        }
+      },
+      "global_T": {
+        "Bulgarian": {
+          "coverage": 0.6953125,
+          "coverage_ci": [
+            0.6666666666666666,
+            1.0
+          ],
+          "n_utterances": 128,
+          "n_speakers": 2
+        },
+        "Catalan": {
+          "coverage": 0.8913043478260869,
+          "coverage_ci": [
+            0.8693181818181818,
+            0.9629629629629629
+          ],
+          "n_utterances": 230,
+          "n_speakers": 2
+        },
+        "Italian": {
+          "coverage": 0.7777777777777778,
+          "coverage_ci": [
+            0.7678571428571429,
+            0.7857142857142857
+          ],
+          "n_utterances": 126,
+          "n_speakers": 2
+        },
+        "Mandarin": {
+          "coverage": 0.7281879194630873,
+          "coverage_ci": [
+            0.71875,
+            0.7391304347826086
+          ],
+          "n_utterances": 298,
+          "n_speakers": 2
+        },
+        "OOV-aggregate": {
+          "coverage": 0.8268279274326553,
+          "coverage_ci": [
+            0.7632213503081322,
+            0.892686578638836
+          ],
+          "n_utterances": 1819,
+          "n_speakers": 16
+        },
+        "Spanish": {
+          "coverage": 0.8909090909090909,
+          "coverage_ci": [
+            0.872093023255814,
+            0.9113924050632911
+          ],
+          "n_utterances": 495,
+          "n_speakers": 4
+        },
+        "Vietnamese": {
+          "coverage": 0.868766404199475,
+          "coverage_ci": [
+            0.7764705882352941,
+            0.9391305301164308
+          ],
+          "n_utterances": 381,
+          "n_speakers": 5
+        }
+      },
+      "group_conditional_T": {
+        "Bulgarian": {
+          "coverage": 1.0,
+          "coverage_ci": [
+            1.0,
+            1.0
+          ],
+          "n_utterances": 128,
+          "n_speakers": 2
+        },
+        "Catalan": {
+          "coverage": 1.0,
+          "coverage_ci": [
+            1.0,
+            1.0
+          ],
+          "n_utterances": 230,
+          "n_speakers": 2
+        },
+        "Italian": {
+          "coverage": 1.0,
+          "coverage_ci": [
+            1.0,
+            1.0
+          ],
+          "n_utterances": 126,
+          "n_speakers": 2
+        },
+        "Mandarin": {
+          "coverage": 1.0,
+          "coverage_ci": [
+            1.0,
+            1.0
+          ],
+          "n_utterances": 298,
+          "n_speakers": 2
+        },
+        "OOV-aggregate": {
+          "coverage": 1.0,
+          "coverage_ci": [
+            1.0,
+            1.0
+          ],
+          "n_utterances": 1819,
+          "n_speakers": 16
+        },
+        "Spanish": {
+          "coverage": 1.0,
+          "coverage_ci": [
+            1.0,
+            1.0
+          ],
+          "n_utterances": 495,
+          "n_speakers": 4
+        },
+        "Vietnamese": {
+          "coverage": 1.0,
+          "coverage_ci": [
+            1.0,
+            1.0
+          ],
+          "n_utterances": 381,
+          "n_speakers": 5
+        }
+      },
+      "isotonic_pooled": {
+        "Bulgarian": {
+          "coverage": 0.90625,
+          "coverage_ci": [
+            0.8974358974358975,
+            1.0
+          ],
+          "n_utterances": 128,
+          "n_speakers": 2
+        },
+        "Catalan": {
+          "coverage": 0.9826086956521739,
+          "coverage_ci": [
+            0.9772727272727273,
+            1.0
+          ],
+          "n_utterances": 230,
+          "n_speakers": 2
+        },
+        "Italian": {
+          "coverage": 0.9682539682539683,
+          "coverage_ci": [
+            0.9642857142857143,
+            0.9714285714285714
+          ],
+          "n_utterances": 126,
+          "n_speakers": 2
+        },
+        "Mandarin": {
+          "coverage": 0.9362416107382551,
+          "coverage_ci": [
+            0.93125,
+            0.9420289855072463
+          ],
+          "n_utterances": 298,
+          "n_speakers": 2
+        },
+        "OOV-aggregate": {
+          "coverage": 0.9538207806487081,
+          "coverage_ci": [
+            0.935781883204304,
+            0.9735172597058305
+          ],
+          "n_utterances": 1819,
+          "n_speakers": 16
+        },
+        "Spanish": {
+          "coverage": 0.9636363636363636,
+          "coverage_ci": [
+            0.9496124031007752,
+            0.9789029535864979
+          ],
+          "n_utterances": 495,
+          "n_speakers": 4
+        },
+        "Vietnamese": {
+          "coverage": 0.963254593175853,
+          "coverage_ci": [
+            0.9411764705882353,
+            0.9828565463581553
+          ],
+          "n_utterances": 381,
+          "n_speakers": 5
+        }
+      },
+      "isotonic_group": {
+        "Bulgarian": {
+          "coverage": 1.0,
+          "coverage_ci": [
+            1.0,
+            1.0
+          ],
+          "n_utterances": 128,
+          "n_speakers": 2
+        },
+        "Catalan": {
+          "coverage": 1.0,
+          "coverage_ci": [
+            1.0,
+            1.0
+          ],
+          "n_utterances": 230,
+          "n_speakers": 2
+        },
+        "Italian": {
+          "coverage": 1.0,
+          "coverage_ci": [
+            1.0,
+            1.0
+          ],
+          "n_utterances": 126,
+          "n_speakers": 2
+        },
+        "Mandarin": {
+          "coverage": 1.0,
+          "coverage_ci": [
+            1.0,
+            1.0
+          ],
+          "n_utterances": 298,
+          "n_speakers": 2
+        },
+        "OOV-aggregate": {
+          "coverage": 1.0,
+          "coverage_ci": [
+            1.0,
+            1.0
+          ],
+          "n_utterances": 1819,
+          "n_speakers": 16
+        },
+        "Spanish": {
+          "coverage": 1.0,
+          "coverage_ci": [
+            1.0,
+            1.0
+          ],
+          "n_utterances": 495,
+          "n_speakers": 4
+        },
+        "Vietnamese": {
+          "coverage": 1.0,
+          "coverage_ci": [
+            1.0,
+            1.0
+          ],
+          "n_utterances": 381,
+          "n_speakers": 5
+        }
+      }
+    },
+    "thresholds": {
+      "baseline": {
+        "threshold": 0.6675613901680058,
+        "cal_track_a_coverage": 0.8000814332247557,
+        "test_track_a_coverage": 0.8320053120849934,
+        "test_track_a_selective_accuracy": 0.4237829209896249,
+        "test_track_a_accuracy_no_abstention": 0.3891102257636122
+      },
+      "global_T": {
+        "threshold": 0.1430409617777644,
+        "cal_track_a_coverage": 0.8000814332247557,
+        "test_track_a_coverage": 0.8837981407702523,
+        "test_track_a_selective_accuracy": 0.4184823441021788,
+        "test_track_a_accuracy_no_abstention": 0.3891102257636122
+      },
+      "group_conditional_T": {
+        "threshold": 0.06769086208131023,
+        "cal_track_a_coverage": 0.8000814332247557,
+        "test_track_a_coverage": 0.9043824701195219,
+        "test_track_a_selective_accuracy": 0.42731277533039647,
+        "test_track_a_accuracy_no_abstention": 0.3891102257636122
+      },
+      "isotonic_pooled": {
+        "threshold": 0.13440860215053765,
+        "cal_track_a_coverage": 0.9458469055374593,
+        "test_track_a_coverage": 0.9628154050464808,
+        "test_track_a_selective_accuracy": 0.4,
+        "test_track_a_accuracy_no_abstention": 0.3891102257636122
+      },
+      "isotonic_group": {
+        "threshold": 0.024265644955298846,
+        "cal_track_a_coverage": 0.8000814332247557,
+        "test_track_a_coverage": 0.7078353253652059,
+        "test_track_a_selective_accuracy": 0.5365853658536586,
+        "test_track_a_accuracy_no_abstention": 0.3891102257636122
+      }
+    }
+  },
+  "abstention_entropy": {
+    "track_a": {
+      "baseline": {
+        "african": {
+          "coverage": 0.6691176470588235,
+          "selective_accuracy": 0.01098901098901099,
+          "answered_wrong_rate": 0.6617647058823529,
+          "coverage_ci": [
+            0.5955056179775281,
+            0.8085106382978723
+          ],
+          "selective_accuracy_ci": [
+            0.0,
+            0.018867924528301886
+          ],
+          "answered_wrong_rate_ci": [
+            0.5842696629213483,
+            0.8085106382978723
+          ],
+          "n_utterances": 136,
+          "n_speakers": 2
+        },
+        "england": {
+          "coverage": 0.9113300492610837,
+          "selective_accuracy": 0.6783783783783783,
+          "answered_wrong_rate": 0.29310344827586204,
+          "coverage_ci": [
+            0.9010819165378671,
+            0.9345454545454546
+          ],
+          "selective_accuracy_ci": [
+            0.33201581027667987,
+            0.7873070325900514
+          ],
+          "answered_wrong_rate_ci": [
+            0.19165378670788252,
+            0.6079136690647482
+          ],
+          "n_utterances": 406,
+          "n_speakers": 4
+        },
+        "indian": {
+          "coverage": 0.8373983739837398,
+          "selective_accuracy": 0.6213592233009708,
+          "answered_wrong_rate": 0.3170731707317073,
+          "coverage_ci": [
+            0.831858407079646,
+            0.9
+          ],
+          "selective_accuracy_ci": [
+            0.0,
+            0.6808510638297872
+          ],
+          "answered_wrong_rate_ci": [
+            0.26548672566371684,
+            0.9
+          ],
+          "n_utterances": 123,
+          "n_speakers": 2
+        },
+        "ireland": {
+          "coverage": 0.8492822966507177,
+          "selective_accuracy": 0.01971830985915493,
+          "answered_wrong_rate": 0.8325358851674641,
+          "coverage_ci": [
+            0.8045112781954887,
+            0.8936170212765957
+          ],
+          "selective_accuracy_ci": [
+            0.0,
+            0.06542056074766354
+          ],
+          "answered_wrong_rate_ci": [
+            0.7518796992481203,
+            0.8936170212765957
+          ],
+          "n_utterances": 418,
+          "n_speakers": 3
+        },
+        "scotland": {
+          "coverage": 0.8703703703703703,
+          "selective_accuracy": 0.4308510638297872,
+          "answered_wrong_rate": 0.49537037037037035,
+          "coverage_ci": [
+            0.8317757009345794,
+            0.908256880733945
+          ],
+          "selective_accuracy_ci": [
+            0.3838383838383838,
+            0.48314606741573035
+          ],
+          "answered_wrong_rate_ci": [
+            0.42990654205607476,
+            0.5596330275229358
+          ],
+          "n_utterances": 216,
+          "n_speakers": 2
+        },
+        "us": {
+          "coverage": 0.8743961352657005,
+          "selective_accuracy": 0.7900552486187845,
+          "answered_wrong_rate": 0.18357487922705315,
+          "coverage_ci": [
+            0.5,
+            0.9662921348314607
+          ],
+          "selective_accuracy_ci": [
+            0.25,
+            0.872093023255814
+          ],
+          "answered_wrong_rate_ci": [
+            0.12359550561797752,
+            0.375
+          ],
+          "n_utterances": 207,
+          "n_speakers": 3
+        }
+      },
+      "global_T": {
+        "african": {
+          "coverage": 0.7279411764705882,
+          "selective_accuracy": 0.010101010101010102,
+          "answered_wrong_rate": 0.7205882352941176,
+          "coverage_ci": [
+            0.7078651685393258,
+            0.7659574468085106
+          ],
+          "selective_accuracy_ci": [
+            0.0,
+            0.015873015873015872
+          ],
+          "answered_wrong_rate_ci": [
+            0.6966292134831461,
+            0.7659574468085106
+          ],
+          "n_utterances": 136,
+          "n_speakers": 2
+        },
+        "england": {
+          "coverage": 0.9187192118226601,
+          "selective_accuracy": 0.6675603217158177,
+          "answered_wrong_rate": 0.3054187192118227,
+          "coverage_ci": [
+            0.8856259659969088,
+            0.9629629629629629
+          ],
+          "selective_accuracy_ci": [
+            0.32954545454545453,
+            0.7811158798283262
+          ],
+          "answered_wrong_rate_ci": [
+            0.1947449768160742,
+            0.6366906474820144
+          ],
+          "n_utterances": 406,
+          "n_speakers": 4
+        },
+        "indian": {
+          "coverage": 0.8048780487804879,
+          "selective_accuracy": 0.6363636363636364,
+          "answered_wrong_rate": 0.2926829268292683,
+          "coverage_ci": [
+            0.7876106194690266,
+            1.0
+          ],
+          "selective_accuracy_ci": [
+            0.0,
+            0.7078651685393258
+          ],
+          "answered_wrong_rate_ci": [
+            0.23008849557522124,
+            1.0
+          ],
+          "n_utterances": 123,
+          "n_speakers": 2
+        },
+        "ireland": {
+          "coverage": 0.9090909090909091,
+          "selective_accuracy": 0.02631578947368421,
+          "answered_wrong_rate": 0.8851674641148325,
+          "coverage_ci": [
+            0.8120300751879699,
+            0.9738219895287958
+          ],
+          "selective_accuracy_ci": [
+            0.0,
+            0.09259259259259259
+          ],
+          "answered_wrong_rate_ci": [
+            0.7368421052631579,
+            0.9738219895287958
+          ],
+          "n_utterances": 418,
+          "n_speakers": 3
+        },
+        "scotland": {
+          "coverage": 0.9583333333333334,
+          "selective_accuracy": 0.4396135265700483,
+          "answered_wrong_rate": 0.5370370370370371,
+          "coverage_ci": [
+            0.9345794392523364,
+            0.981651376146789
+          ],
+          "selective_accuracy_ci": [
+            0.40186915887850466,
+            0.48
+          ],
+          "answered_wrong_rate_ci": [
+            0.48598130841121495,
+            0.5871559633027523
+          ],
+          "n_utterances": 216,
+          "n_speakers": 2
+        },
+        "us": {
+          "coverage": 0.7971014492753623,
+          "selective_accuracy": 0.7636363636363637,
+          "answered_wrong_rate": 0.18840579710144928,
+          "coverage_ci": [
+            0.625,
+            0.9213483146067416
+          ],
+          "selective_accuracy_ci": [
+            0.2,
+            0.8780487804878049
+          ],
+          "answered_wrong_rate_ci": [
+            0.11235955056179775,
+            0.5
+          ],
+          "n_utterances": 207,
+          "n_speakers": 3
+        }
+      },
+      "group_conditional_T": {
+        "african": {
+          "coverage": 0.5441176470588235,
+          "selective_accuracy": 0.013513513513513514,
+          "answered_wrong_rate": 0.5367647058823529,
+          "coverage_ci": [
+            0.5319148936170213,
+            0.550561797752809
+          ],
+          "selective_accuracy_ci": [
+            0.0,
+            0.02040816326530612
+          ],
+          "answered_wrong_rate_ci": [
+            0.5319148936170213,
+            0.5393258426966292
+          ],
+          "n_utterances": 136,
+          "n_speakers": 2
+        },
+        "england": {
+          "coverage": 1.0,
+          "selective_accuracy": 0.645320197044335,
+          "answered_wrong_rate": 0.35467980295566504,
+          "coverage_ci": [
+            1.0,
+            1.0
+          ],
+          "selective_accuracy_ci": [
+            0.3237410071942446,
+            0.7474402730375427
+          ],
+          "answered_wrong_rate_ci": [
+            0.2525597269624573,
+            0.6762589928057554
+          ],
+          "n_utterances": 406,
+          "n_speakers": 4
+        },
+        "indian": {
+          "coverage": 1.0,
+          "selective_accuracy": 0.5528455284552846,
+          "answered_wrong_rate": 0.44715447154471544,
+          "coverage_ci": [
+            1.0,
+            1.0
+          ],
+          "selective_accuracy_ci": [
+            0.0,
+            0.6017699115044248
+          ],
+          "answered_wrong_rate_ci": [
+            0.39823008849557523,
+            1.0
+          ],
+          "n_utterances": 123,
+          "n_speakers": 2
+        },
+        "ireland": {
+          "coverage": 0.7105263157894737,
+          "selective_accuracy": 0.026936026936026935,
+          "answered_wrong_rate": 0.6913875598086124,
+          "coverage_ci": [
+            0.518796992481203,
+            0.8219895287958116
+          ],
+          "selective_accuracy_ci": [
+            0.0,
+            0.11594202898550725
+          ],
+          "answered_wrong_rate_ci": [
+            0.45864661654135336,
+            0.8219895287958116
+          ],
+          "n_utterances": 418,
+          "n_speakers": 3
+        },
+        "scotland": {
+          "coverage": 1.0,
+          "selective_accuracy": 0.4305555555555556,
+          "answered_wrong_rate": 0.5694444444444444,
+          "coverage_ci": [
+            1.0,
+            1.0
+          ],
+          "selective_accuracy_ci": [
+            0.3944954128440367,
+            0.4672897196261682
+          ],
+          "answered_wrong_rate_ci": [
+            0.5327102803738317,
+            0.6055045871559633
+          ],
+          "n_utterances": 216,
+          "n_speakers": 2
+        },
+        "us": {
+          "coverage": 1.0,
+          "selective_accuracy": 0.7342995169082126,
+          "answered_wrong_rate": 0.26570048309178745,
+          "coverage_ci": [
+            1.0,
+            1.0
+          ],
+          "selective_accuracy_ci": [
+            0.125,
+            0.8539325842696629
+          ],
+          "answered_wrong_rate_ci": [
+            0.14606741573033707,
+            0.875
+          ],
+          "n_utterances": 207,
+          "n_speakers": 3
+        }
+      }
+    },
+    "track_b": {
+      "baseline": {
+        "Bulgarian": {
+          "coverage": 0.734375,
+          "coverage_ci": [
+            0.7094017094017094,
+            1.0
+          ],
+          "n_utterances": 128,
+          "n_speakers": 2
+        },
+        "Catalan": {
+          "coverage": 0.9,
+          "coverage_ci": [
+            0.8806818181818182,
+            0.9629629629629629
+          ],
+          "n_utterances": 230,
+          "n_speakers": 2
+        },
+        "Italian": {
+          "coverage": 0.8095238095238095,
+          "coverage_ci": [
+            0.8,
+            0.8214285714285714
+          ],
+          "n_utterances": 126,
+          "n_speakers": 2
+        },
+        "Mandarin": {
+          "coverage": 0.7718120805369127,
+          "coverage_ci": [
+            0.7681159420289855,
+            0.775
+          ],
+          "n_utterances": 298,
+          "n_speakers": 2
+        },
+        "OOV-aggregate": {
+          "coverage": 0.8433205057724025,
+          "coverage_ci": [
+            0.7895394545982014,
+            0.8989724641902701
+          ],
+          "n_utterances": 1819,
+          "n_speakers": 16
+        },
+        "Spanish": {
+          "coverage": 0.8585858585858586,
+          "coverage_ci": [
+            0.8085106382978723,
+            0.9135593220338983
+          ],
+          "n_utterances": 495,
+          "n_speakers": 4
+        },
+        "Vietnamese": {
+          "coverage": 0.8792650918635171,
+          "coverage_ci": [
+            0.814935064935065,
+            0.9358229003651538
+          ],
+          "n_utterances": 381,
+          "n_speakers": 5
+        }
+      },
+      "global_T": {
+        "Bulgarian": {
+          "coverage": 0.625,
+          "coverage_ci": [
+            0.5897435897435898,
+            1.0
+          ],
+          "n_utterances": 128,
+          "n_speakers": 2
+        },
+        "Catalan": {
+          "coverage": 0.8434782608695652,
+          "coverage_ci": [
+            0.8125,
+            0.9444444444444444
+          ],
+          "n_utterances": 230,
+          "n_speakers": 2
+        },
+        "Italian": {
+          "coverage": 0.7301587301587301,
+          "coverage_ci": [
+            0.6785714285714286,
+            0.7714285714285715
+          ],
+          "n_utterances": 126,
+          "n_speakers": 2
+        },
+        "Mandarin": {
+          "coverage": 0.610738255033557,
+          "coverage_ci": [
+            0.5942028985507246,
+            0.625
+          ],
+          "n_utterances": 298,
+          "n_speakers": 2
+        },
+        "OOV-aggregate": {
+          "coverage": 0.7987905442550852,
+          "coverage_ci": [
+            0.7354089432826363,
+            0.8629241439906278
+          ],
+          "n_utterances": 1819,
+          "n_speakers": 16
+        },
+        "Spanish": {
+          "coverage": 0.8707070707070707,
+          "coverage_ci": [
+            0.8522167487684729,
+            0.8921568627450981
+          ],
+          "n_utterances": 495,
+          "n_speakers": 4
+        },
+        "Vietnamese": {
+          "coverage": 0.8267716535433071,
+          "coverage_ci": [
+            0.7029411764705882,
+            0.908641975308642
+          ],
+          "n_utterances": 381,
+          "n_speakers": 5
+        }
+      },
+      "group_conditional_T": {
+        "Bulgarian": {
+          "coverage": 1.0,
+          "coverage_ci": [
+            1.0,
+            1.0
+          ],
+          "n_utterances": 128,
+          "n_speakers": 2
+        },
+        "Catalan": {
+          "coverage": 1.0,
+          "coverage_ci": [
+            1.0,
+            1.0
+          ],
+          "n_utterances": 230,
+          "n_speakers": 2
+        },
+        "Italian": {
+          "coverage": 1.0,
+          "coverage_ci": [
+            1.0,
+            1.0
+          ],
+          "n_utterances": 126,
+          "n_speakers": 2
+        },
+        "Mandarin": {
+          "coverage": 1.0,
+          "coverage_ci": [
+            1.0,
+            1.0
+          ],
+          "n_utterances": 298,
+          "n_speakers": 2
+        },
+        "OOV-aggregate": {
+          "coverage": 1.0,
+          "coverage_ci": [
+            1.0,
+            1.0
+          ],
+          "n_utterances": 1819,
+          "n_speakers": 16
+        },
+        "Spanish": {
+          "coverage": 1.0,
+          "coverage_ci": [
+            1.0,
+            1.0
+          ],
+          "n_utterances": 495,
+          "n_speakers": 4
+        },
+        "Vietnamese": {
+          "coverage": 1.0,
+          "coverage_ci": [
+            1.0,
+            1.0
+          ],
+          "n_utterances": 381,
+          "n_speakers": 5
+        }
+      }
+    },
+    "thresholds": {
+      "baseline": {
+        "cal_track_a_coverage": 0.8000814332247557,
+        "test_track_a_coverage": 0.8552456839309429,
+        "test_track_a_selective_accuracy": 0.4246894409937888,
+        "test_track_a_accuracy_no_abstention": 0.3891102257636122,
+        "max_entropy_nats": 0.8166717100610072
+      },
+      "global_T": {
+        "cal_track_a_coverage": 0.8000814332247557,
+        "test_track_a_coverage": 0.8784860557768924,
+        "test_track_a_selective_accuracy": 0.40816326530612246,
+        "test_track_a_accuracy_no_abstention": 0.3891102257636122,
+        "max_entropy_nats": 2.648705861683027
+      },
+      "group_conditional_T": {
+        "cal_track_a_coverage": 0.8000814332247557,
+        "test_track_a_coverage": 0.8784860557768924,
+        "test_track_a_selective_accuracy": 0.4414210128495843,
+        "test_track_a_accuracy_no_abstention": 0.3891102257636122,
+        "max_entropy_nats": 2.7718092926144413
+      }
+    }
+  },
+  "within_group_ranking": {
+    "african": {
+      "aurc": 0.9952454319772708,
+      "top1_accuracy": 0.007352941176470588,
+      "aurc_ci": [
+        0.9919248000006082,
+        1.0
+      ],
+      "top1_accuracy_ci": [
+        0.0,
+        0.011235955056179775
+      ],
+      "n_utterances": 136,
+      "n_speakers": 2,
+      "aurc_oracle": 0.9596063050310919,
+      "aurc_random": 0.9926470588235294
+    },
+    "england": {
+      "aurc": 0.20479604561489828,
+      "top1_accuracy": 0.645320197044335,
+      "aurc_ci": [
+        0.10337214088415218,
+        0.5670022284007795
+      ],
+      "top1_accuracy_ci": [
+        0.3237410071942446,
+        0.7474402730375427
+      ],
+      "n_utterances": 406,
+      "n_speakers": 4,
+      "aurc_oracle": 0.07246031147867227,
+      "aurc_random": 0.35467980295566504
+    },
+    "indian": {
+      "aurc": 0.2037719134063357,
+      "top1_accuracy": 0.5528455284552846,
+      "aurc_ci": [
+        0.16858005215043637,
+        1.0
+      ],
+      "top1_accuracy_ci": [
+        0.0,
+        0.6017699115044248
+      ],
+      "n_utterances": 123,
+      "n_speakers": 2,
+      "aurc_oracle": 0.12130661880359879,
+      "aurc_random": 0.44715447154471544
+    },
+    "ireland": {
+      "aurc": 0.9883233808447068,
+      "top1_accuracy": 0.023923444976076555,
+      "aurc_ci": [
+        0.9664302949217464,
+        1.0
+      ],
+      "top1_accuracy_ci": [
+        0.0,
+        0.07518796992481203
+      ],
+      "n_utterances": 418,
+      "n_speakers": 3,
+      "aurc_oracle": 0.8879204655797984,
+      "aurc_random": 0.9760765550239234
+    },
+    "scotland": {
+      "aurc": 0.6596001257554088,
+      "top1_accuracy": 0.4305555555555556,
+      "aurc_ci": [
+        0.5548290266563178,
+        0.7618038985953595
+      ],
+      "top1_accuracy_ci": [
+        0.3944954128440367,
+        0.4672897196261682
+      ],
+      "n_utterances": 216,
+      "n_speakers": 2,
+      "aurc_oracle": 0.20793913533750039,
+      "aurc_random": 0.5694444444444444
+    },
+    "us": {
+      "aurc": 0.1156611593592969,
+      "top1_accuracy": 0.7342995169082126,
+      "aurc_ci": [
+        0.03223137411070678,
+        0.786338561114145
+      ],
+      "top1_accuracy_ci": [
+        0.125,
+        0.8539325842696629
+      ],
+      "n_utterances": 207,
+      "n_speakers": 3,
+      "aurc_oracle": 0.039561257012727384,
+      "aurc_random": 0.2657004830917874
+    }
+  },
+  "within_group_ranking_entropy": {
+    "african": {
+      "aurc": 0.9957424338935175,
+      "top1_accuracy": 0.007352941176470588,
+      "aurc_ci": [
+        0.9926741567338682,
+        1.0
+      ],
+      "top1_accuracy_ci": [
+        0.0,
+        0.011235955056179775
+      ],
+      "n_utterances": 136,
+      "n_speakers": 2,
+      "aurc_oracle": 0.9596063050310919,
+      "aurc_random": 0.9926470588235294
+    },
+    "england": {
+      "aurc": 0.20381191003118737,
+      "top1_accuracy": 0.645320197044335,
+      "aurc_ci": [
+        0.10210299894454901,
+        0.5659197107011715
+      ],
+      "top1_accuracy_ci": [
+        0.3237410071942446,
+        0.7474402730375427
+      ],
+      "n_utterances": 406,
+      "n_speakers": 4,
+      "aurc_oracle": 0.07246031147867227,
+      "aurc_random": 0.35467980295566504
+    },
+    "indian": {
+      "aurc": 0.20218189102463147,
+      "top1_accuracy": 0.5528455284552846,
+      "aurc_ci": [
+        0.16631375051253655,
+        1.0
+      ],
+      "top1_accuracy_ci": [
+        0.0,
+        0.6017699115044248
+      ],
+      "n_utterances": 123,
+      "n_speakers": 2,
+      "aurc_oracle": 0.12130661880359879,
+      "aurc_random": 0.44715447154471544
+    },
+    "ireland": {
+      "aurc": 0.9886203982368812,
+      "top1_accuracy": 0.023923444976076555,
+      "aurc_ci": [
+        0.9665512944601115,
+        1.0
+      ],
+      "top1_accuracy_ci": [
+        0.0,
+        0.07518796992481203
+      ],
+      "n_utterances": 418,
+      "n_speakers": 3,
+      "aurc_oracle": 0.8879204655797984,
+      "aurc_random": 0.9760765550239234
+    },
+    "scotland": {
+      "aurc": 0.6579081605022492,
+      "top1_accuracy": 0.4305555555555556,
+      "aurc_ci": [
+        0.5499972710319939,
+        0.7624744506009766
+      ],
+      "top1_accuracy_ci": [
+        0.3944954128440367,
+        0.4672897196261682
+      ],
+      "n_utterances": 216,
+      "n_speakers": 2,
+      "aurc_oracle": 0.20793913533750039,
+      "aurc_random": 0.5694444444444444
+    },
+    "us": {
+      "aurc": 0.11635531256296648,
+      "top1_accuracy": 0.7342995169082126,
+      "aurc_ci": [
+        0.03239063437504736,
+        0.786338561114145
+      ],
+      "top1_accuracy_ci": [
+        0.125,
+        0.8539325842696629
+      ],
+      "n_utterances": 207,
+      "n_speakers": 3,
+      "aurc_oracle": 0.039561257012727384,
+      "aurc_random": 0.2657004830917874
+    }
+  },
+  "isotonic_fit": {
+    "pooled_knots": 41,
+    "per_group_knots": {
+      "african": 4,
+      "england": 30,
+      "indian": 18,
+      "ireland": 2,
+      "scotland": 4,
+      "us": 30
+    },
+    "per_group_output_range": {
+      "african": [
+        0.0,
+        0.024265644955300127
+      ],
+      "england": [
+        0.0,
+        1.0
+      ],
+      "indian": [
+        0.15873015873015872,
+        1.0
+      ],
+      "ireland": [
+        0.013015184381778741,
+        0.013015184381778741
+      ],
+      "scotland": [
+        0.0,
+        0.03225806451612903
+      ],
+      "us": [
+        0.0,
+        1.0
+      ]
+    }
+  }
+}

@@ -246,6 +246,115 @@ def track_b_confidence_chart(
 
 
 # ----------------------------------------------------------------------
+# Calibration-baseline comparison: any number of conditions
+# ----------------------------------------------------------------------
+
+_CONDITION_COLORS = ["#4C72B0", "#DD8452", "#55A868", "#C44E52", "#8172B3", "#937860"]
+
+
+def multi_condition_bars(
+    per_condition: dict,
+    key: str,
+    out_path: Path,
+    ylabel: str,
+    title: str,
+    groups: list | None = None,
+    ref_line: float | None = None,
+    ref_label: str | None = None,
+):
+    """
+    Grouped bars of per-group `key` under each condition, with `<key>_ci`
+    error bars where present.
+
+    per_condition : {condition_label: {group: {key: ..., f"{key}_ci": [lo, hi]}}}
+                    Insertion order sets bar order and color.
+    groups        : x-axis order; defaults to the sorted groups of the first
+                    condition.
+    """
+    labels = list(per_condition.keys())
+    if groups is None:
+        groups = sorted(per_condition[labels[0]].keys())
+    x = np.arange(len(groups))
+    width = 0.8 / len(labels)
+
+    fig, ax = plt.subplots(figsize=(max(8.0, 1.5 * len(groups)), 5.0))
+    for i, lab in enumerate(labels):
+        src = per_condition[lab]
+        ax.bar(x + (i - (len(labels) - 1) / 2) * width,
+               [src[g][key] for g in groups], width, label=lab,
+               color=_CONDITION_COLORS[i % len(_CONDITION_COLORS)],
+               edgecolor="black", linewidth=0.6,
+               yerr=ci_yerr(src, groups, key), **_ERR_KW)
+    if ref_line is not None:
+        ax.axhline(ref_line, color="black", linestyle=":", linewidth=1, label=ref_label)
+
+    ax.set_xticks(x)
+    ax.set_xticklabels(groups, rotation=20, ha="right", fontsize=10)
+    ax.set_ylabel(ylabel)
+    if ci_yerr(per_condition[labels[0]], groups, key) is not None:
+        title += "\n(error bars: 95% speaker-level bootstrap CI)"
+    ax.set_title(title)
+    ax.legend(loc="upper left", bbox_to_anchor=(1.01, 1.0), fontsize=9)
+    ax.grid(True, axis="y", alpha=0.25)
+    fig.tight_layout()
+    fig.savefig(out_path, dpi=150, bbox_inches="tight")
+    plt.close(fig)
+
+
+def abstention_curves(
+    within_group: dict,
+    pooled_sweep: dict,
+    threshold: float,
+    out_path: Path,
+):
+    """
+    Two panels for max-softmax abstention.
+
+    Left: within-group accuracy-coverage curves — does confidence rank this
+    group's correct predictions above its incorrect ones?
+    within_group : {group: {"coverage": (N,), "selective_accuracy": (N,)}}
+
+    Right: per-group fraction answered as one pooled confidence threshold is
+    swept — does any threshold stop answering for the groups the model
+    fails on while still answering for the others?
+    pooled_sweep : {"thresholds": (M,), "coverage": {group: (M,)}}
+    """
+    fig, (ax_l, ax_r) = plt.subplots(1, 2, figsize=(12, 5))
+    groups = sorted(within_group.keys())
+    cmap = plt.get_cmap("tab10")
+    colors = {g: cmap(i % 10) for i, g in enumerate(sorted(pooled_sweep["coverage"].keys()))}
+
+    for g in groups:
+        c = within_group[g]
+        ax_l.plot(c["coverage"], c["selective_accuracy"], color=colors[g], label=g)
+    ax_l.set_xlim(0, 1)
+    ax_l.set_ylim(0, 1)
+    ax_l.set_xlabel("coverage (fraction of the group answered)")
+    ax_l.set_ylabel("accuracy on answered utterances")
+    ax_l.set_title("Within-group accuracy vs coverage (T = 1)")
+    ax_l.grid(True, alpha=0.3)
+    ax_l.legend(fontsize=9)
+
+    t = pooled_sweep["thresholds"]
+    for g, cov in sorted(pooled_sweep["coverage"].items()):
+        ax_r.plot(t, cov, color=colors[g], label=g,
+                  linestyle="--" if g == "OOV-aggregate" else "-")
+    ax_r.axvline(threshold, color="black", linestyle=":", linewidth=1,
+                 label=f"threshold for 80% pooled coverage ({threshold:.3f})")
+    ax_r.set_xlim(t.min(), t.max())
+    ax_r.set_ylim(0, 1.02)
+    ax_r.set_xlabel("confidence threshold (abstain below)")
+    ax_r.set_ylabel("fraction of the group answered")
+    ax_r.set_title("One pooled threshold, per-group fraction answered")
+    ax_r.grid(True, alpha=0.3)
+    ax_r.legend(fontsize=8, loc="lower left")
+
+    fig.tight_layout()
+    fig.savefig(out_path, dpi=150, bbox_inches="tight")
+    plt.close(fig)
+
+
+# ----------------------------------------------------------------------
 # Existing utilities (kept for completeness; less useful when confidence
 # is degenerate at a single point as in our results)
 # ----------------------------------------------------------------------
